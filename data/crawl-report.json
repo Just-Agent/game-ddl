@@ -1,0 +1,182 @@
+{
+  "generatedAt": "2026-05-17T15:19:14.822Z",
+  "checks": [
+    {
+      "id": "blast-pgl-event-listing-blast-tv-cs-tournaments-pgl-singapore-major-2026",
+      "name": "BLAST / PGL Event Listing",
+      "url": "https://blast.tv/cs/tournaments/pgl-singapore-major-2026",
+      "adapter": "event-listing",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://blast.tv/cs/tournaments/pgl-singapore-major-2026",
+      "contentType": "text/html; charset=utf-8",
+      "title": "PGL Singapore Major 2026 - CS2 Esports Tournament",
+      "matchedMarkers": [
+        "Event",
+        "2026",
+        "PGL Singapore Major 2026",
+        "CS2",
+        "PGL",
+        "Major"
+      ],
+      "relatedItemCount": 1,
+      "checkedAt": "2026-05-17T15:19:11.321Z"
+    },
+    {
+      "id": "esl-pro-tour-pro-eslgaming-com-tour-csgo-cologne",
+      "name": "ESL Pro Tour",
+      "url": "https://pro.eslgaming.com/tour/csgo/cologne",
+      "adapter": "esl-cs2",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://pro.eslgaming.com/tour/cs/cologne/",
+      "contentType": "text/html; charset=UTF-8",
+      "title": "IEM Cologne 2026 - ESL Pro Tour",
+      "matchedMarkers": [
+        "ESL",
+        "IEM",
+        "Cologne",
+        "IEM Cologne Major 2026",
+        "CS2",
+        "Major"
+      ],
+      "relatedItemCount": 1,
+      "checkedAt": "2026-05-17T15:19:13.644Z"
+    },
+    {
+      "id": "esports-nations-cup-esportsnationscup-com-en-press-releases-enc-adds-hon",
+      "name": "Esports Nations Cup",
+      "url": "https://esportsnationscup.com/en/press-releases/enc-adds-honor-of-kings-to-the-games-lineup",
+      "adapter": "honor-of-kings-enc",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://esportsnationscup.com/en/press-releases/enc-adds-honor-of-kings-to-the-games-lineup",
+      "contentType": "text/html; charset=utf-8",
+      "title": "Esports Nations Cup | Press Releases",
+      "matchedMarkers": [
+        "Honor of Kings",
+        "Esports Nations Cup",
+        "ENC",
+        "qualifier",
+        "Event start"
+      ],
+      "relatedItemCount": 3,
+      "checkedAt": "2026-05-17T15:19:10.946Z"
+    },
+    {
+      "id": "esports-world-cup-esportsworldcup-com-en-news-ewc26-confirms-the-return-",
+      "name": "Esports World Cup",
+      "url": "https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games",
+      "adapter": "esports-world-cup",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://esportsworldcup.com/en/press-releases/ewc26-confirms-the-return-of-20-games",
+      "contentType": "text/html; charset=utf-8",
+      "title": "Esports World Cup 2026 Confirms the Return of 20 Games",
+      "matchedMarkers": [
+        "Esports World Cup",
+        "2026",
+        "Esports World Cup 2026",
+        "EWC",
+        "Honor of Kings"
+      ],
+      "relatedItemCount": 3,
+      "checkedAt": "2026-05-17T15:19:13.378Z"
+    },
+    {
+      "id": "esports-world-cup-www-esportsworldcup-com-en-news-cs2-locked-in-for-ewc-",
+      "name": "Esports World Cup",
+      "url": "https://www.esportsworldcup.com/en/news/cs2-locked-in-for-ewc-2026-2027",
+      "adapter": "esports-world-cup",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.esportsworldcup.com/en/news/cs2-locked-in-for-ewc-2026-2027",
+      "contentType": "text/html; charset=utf-8",
+      "title": "Counter-Strike 2 Locked In for EWC 26 and 27",
+      "matchedMarkers": [
+        "Esports World Cup",
+        "2026",
+        "Event start",
+        "CS2",
+        "EWC",
+        "Counter-Strike 2"
+      ],
+      "relatedItemCount": 1,
+      "checkedAt": "2026-05-17T15:19:11.085Z"
+    },
+    {
+      "id": "lol-esports-lolesports-com-en-us-news-lcs-spring-finals-heads-to-asu-at-",
+      "name": "LoL Esports",
+      "url": "https://lolesports.com/en-US/news/lcs-spring-finals-heads-to-asu-at-mullett-arena",
+      "adapter": "lol-esports",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lolesports.com/en-US/news/lcs-spring-finals-heads-to-asu-at-mullett-arena",
+      "contentType": "text/html; charset=utf-8",
+      "title": "LoL Esports |",
+      "matchedMarkers": [
+        "LoL Esports",
+        "MSI",
+        "Worlds",
+        "LCS"
+      ],
+      "relatedItemCount": 1,
+      "checkedAt": "2026-05-17T15:19:11.272Z"
+    },
+    {
+      "id": "lol-esports-lolesports-com-en-us-news-msi-and-worlds-updates",
+      "name": "LoL Esports",
+      "url": "https://lolesports.com/en-US/news/msi-and-worlds-updates",
+      "adapter": "lol-esports",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lolesports.com/en-US/news/msi-and-worlds-updates",
+      "contentType": "text/html; charset=utf-8",
+      "title": "LoL Esports |",
+      "matchedMarkers": [
+        "LoL Esports",
+        "MSI",
+        "Worlds",
+        "Riot Games",
+        "Grand Final"
+      ],
+      "relatedItemCount": 3,
+      "checkedAt": "2026-05-17T15:19:14.127Z"
+    },
+    {
+      "id": "thespike-gg-event-listing-www-thespike-gg-events-valorant-champions-tour",
+      "name": "THESPIKE.GG Event Listing",
+      "url": "https://www.thespike.gg/events/valorant-champions-tour-2026-masters-london-2026/4148",
+      "adapter": "event-listing",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.thespike.gg/events/valorant-champions-tour-2026-masters-london-2026/4148",
+      "contentType": "text/html; charset=utf-8",
+      "title": "VALORANT Champions Tour 2026 - Masters London 2026 | VALORANT Esports Event | Overview | THESPIKE.GG",
+      "matchedMarkers": [
+        "Event",
+        "2026",
+        "VALORANT Masters London 2026",
+        "VALORANT",
+        "VCT",
+        "Masters"
+      ],
+      "relatedItemCount": 1,
+      "checkedAt": "2026-05-17T15:19:14.822Z"
+    },
+    {
+      "id": "valve-dota-2-cdn-cloudflare-steamstatic-com-apps-dota2-assets-rfp-ti-202",
+      "name": "Valve / Dota 2",
+      "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf",
+      "adapter": "valve-dota2",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf",
+      "contentType": "application/pdf",
+      "title": "",
+      "matchedMarkers": [],
+      "relatedItemCount": 2,
+      "checkedAt": "2026-05-17T15:19:14.179Z"
+    }
+  ]
+}
