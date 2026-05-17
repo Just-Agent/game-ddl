@@ -1,6 +1,6 @@
 {
   "topicId": "game-ddl",
-  "generatedAt": "2026-05-17T15:19:14.822Z",
+  "generatedAt": "2026-05-17T15:26:10.007Z",
   "sourcePolicy": "official-first; authoritative aggregators allowed only when organizer details are not exposed yet",
   "strictLinkCheckReady": false,
   "sourceFamilies": [
@@ -19,7 +19,7 @@
       "relatedItems": [
         "game-ddl-pgl-singapore-major-2026-11-25"
       ],
-      "lastCheckedAt": "2026-05-17T15:19:14.822Z"
+      "lastCheckedAt": "2026-05-17T15:26:10.007Z"
     },
     {
       "id": "esl-pro-tour-pro-eslgaming-com-tour-csgo-cologne",
@@ -36,7 +36,7 @@
       "relatedItems": [
         "game-ddl-iem-cologne-major-2026-06-02"
       ],
-      "lastCheckedAt": "2026-05-17T15:19:14.822Z"
+      "lastCheckedAt": "2026-05-17T15:26:10.007Z"
     },
     {
       "id": "esports-nations-cup-esportsnationscup-com-en-press-releases-enc-adds-hon",
@@ -60,7 +60,7 @@
         "game-ddl-hok-enc-regional-qualifiers-2026-07-03",
         "game-ddl-hok-enc-tournament-2026-11-24"
       ],
-      "lastCheckedAt": "2026-05-17T15:19:14.822Z"
+      "lastCheckedAt": "2026-05-17T15:26:10.007Z"
     },
     {
       "id": "esports-world-cup-esportsworldcup-com-en-news-ewc26-confirms-the-return-",
@@ -84,7 +84,7 @@
         "game-ddl-ewc-honor-of-kings-2026-07-06",
         "game-ddl-ewc-league-of-legends-2026-07-06"
       ],
-      "lastCheckedAt": "2026-05-17T15:19:14.822Z"
+      "lastCheckedAt": "2026-05-17T15:26:10.007Z"
     },
     {
       "id": "esports-world-cup-www-esportsworldcup-com-en-news-cs2-locked-in-for-ewc-",
@@ -101,7 +101,7 @@
       "relatedItems": [
         "game-ddl-ewc-cs2-2026-08-10"
       ],
-      "lastCheckedAt": "2026-05-17T15:19:14.822Z"
+      "lastCheckedAt": "2026-05-17T15:26:10.007Z"
     },
     {
       "id": "lol-esports-lolesports-com-en-us-news-lcs-spring-finals-heads-to-asu-at-",
@@ -118,7 +118,7 @@
       "relatedItems": [
         "game-ddl-lol-lcs-spring-finals-2026-06-13"
       ],
-      "lastCheckedAt": "2026-05-17T15:19:14.822Z"
+      "lastCheckedAt": "2026-05-17T15:26:10.007Z"
     },
     {
       "id": "lol-esports-lolesports-com-en-us-news-msi-and-worlds-updates",
@@ -142,7 +142,7 @@
         "game-ddl-lol-worlds-2026-10-15",
         "game-ddl-lol-worlds-final-2026-11-14"
       ],
-      "lastCheckedAt": "2026-05-17T15:19:14.822Z"
+      "lastCheckedAt": "2026-05-17T15:26:10.007Z"
     },
     {
       "id": "thespike-gg-event-listing-www-thespike-gg-events-valorant-champions-tour",
@@ -159,7 +159,7 @@
       "relatedItems": [
         "game-ddl-valorant-masters-london-2026-06-06"
       ],
-      "lastCheckedAt": "2026-05-17T15:19:14.822Z"
+      "lastCheckedAt": "2026-05-17T15:26:10.007Z"
     },
     {
       "id": "valve-dota-2-cdn-cloudflare-steamstatic-com-apps-dota2-assets-rfp-ti-202",
@@ -180,7 +180,7 @@
         "game-ddl-dota2-ti15-qualifiers-2026-06-09",
         "game-ddl-dota2-the-international-2026-08-13"
       ],
-      "lastCheckedAt": "2026-05-17T15:19:14.822Z"
+      "lastCheckedAt": "2026-05-17T15:26:10.007Z"
     }
   ]
 }
