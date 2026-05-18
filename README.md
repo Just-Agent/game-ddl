@@ -1,50 +1,136 @@
-# 电竞赛事 DDL
+<p align="center">
+  <img src="docs/assets/topic-map.svg" alt="电竞赛事 DDL topic map" width="920">
+</p>
 
-> Just-DDL Network 独立专题仓库。默认中文展示，英文版本后续由 Hub 手动切换。
+<h1 align="center">电竞赛事 DDL</h1>
 
-英雄联盟、王者荣耀、VALORANT、Dota 2、CS2 与电竞世界杯等赛事赛历和报名/开赛节点。
+<p align="center">
+  英雄联盟、王者荣耀、VALORANT、CS2、Dota 2 和电竞世界杯的赛事节点追踪。<br>
+  给观赛用户、战队运营、赛事编辑和电竞内容创作者使用：按项目折叠，按开赛/预选/决赛倒计时。
+</p>
 
-## 专题数据
+<p align="center">
+  <a href="https://just-agent.github.io/game-ddl/"><img alt="GitHub Pages" src="https://img.shields.io/badge/Pages-live-E11D48?style=for-the-badge"></a>
+  <a href="https://just-agent.github.io/just-ddl/#/topic/game-ddl"><img alt="Just-DDL Hub" src="https://img.shields.io/badge/Hub-Just--DDL-0F766E?style=for-the-badge"></a>
+  <a href="https://github.com/Just-Agent/game-ddl/actions/workflows/update-data.yml"><img alt="Update Data" src="https://github.com/Just-Agent/game-ddl/actions/workflows/update-data.yml/badge.svg"></a>
+  <img alt="Node 24" src="https://img.shields.io/badge/Node-24-339933?logo=node.js&logoColor=white">
+</p>
 
-- Hub: https://just-agent.github.io/just-ddl/#/topic/game-ddl
-- Pages: https://just-agent.github.io/game-ddl/
-- Repository: https://github.com/Just-Agent/game-ddl
-- 当前条目: 16
-- 来源族: 9
+<p align="center">
+  <a href="https://just-agent.github.io/game-ddl/"><strong>打开专题站</strong></a>
+  ·
+  <a href="https://just-agent.github.io/just-ddl/#/topic/game-ddl">在 Just-DDL Hub 查看</a>
+  ·
+  <a href="data/items.json">下载数据 JSON</a>
+  ·
+  <a href="data/sources.json">查看来源清单</a>
+</p>
 
-## 子专题
+## 为什么拆成独立仓库
 
-- CS2: 3 条
-- VALORANT: 1 条
-- 王者荣耀: 4 条
-- Dota 2: 2 条
-- 英雄联盟: 5 条
-- 综合电竞: 1 条
+电竞赛事 DDL 是 Just-DDL Network 的一个独立专题仓库。它单独维护数据、crawler、validator、link-check、GitHub Pages 和 Hub 同步，这样每个专题可以按自己的来源节奏更新，不会互相拖累。
 
-## 数据链路
+> 数据仅供参考；报名、参赛、购票和投稿等关键决策请以官方页面为准。
 
-- `data/items.json`: 已发布 DDL 条目，每条含倒计时 deadline、来源 URL、子专题字段。
-- `data/sources.json`: 官方/主办方/权威聚合来源清单。
-- `scripts/crawl-sources.mjs`: source-specific crawler，会按来源类型执行不同 adapter 并写入 crawl report。
-- `scripts/validate-data.mjs`: 校验必填字段、重复 id、deadline 与 URL 格式。
-- `scripts/link-check.mjs`: 链接检查，默认 warning-only；设置 `STRICT_LINK_CHECK=1` 后切换严格模式。
-- `.github/workflows/update-data.yml`: Node 24 定时 crawler + validator + link-check，成功后主动通知 Hub 同步。
-- `.github/workflows/deploy-pages.yml`: GitHub Pages 静态发布。
+## 专题总览
 
-## 来源
+| 指标 | 当前值 |
+| --- | ---: |
+| DDL 条目 | 16 |
+| 子专题 | 6 |
+| 来源族 | 9 |
+| Pages | [https://just-agent.github.io/game-ddl/](https://just-agent.github.io/game-ddl/) |
+| Hub | [https://just-agent.github.io/just-ddl/#/topic/game-ddl](https://just-agent.github.io/just-ddl/#/topic/game-ddl) |
 
-- BLAST / PGL Event Listing: https://blast.tv/cs/tournaments/pgl-singapore-major-2026
-- ESL Pro Tour: https://pro.eslgaming.com/tour/csgo/cologne
-- Esports Nations Cup: https://esportsnationscup.com/en/press-releases/enc-adds-honor-of-kings-to-the-games-lineup
-- Esports World Cup: https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games
-- Esports World Cup: https://www.esportsworldcup.com/en/news/cs2-locked-in-for-ewc-2026-2027
-- LoL Esports: https://lolesports.com/en-US/news/lcs-spring-finals-heads-to-asu-at-mullett-arena
-- LoL Esports: https://lolesports.com/en-US/news/msi-and-worlds-updates
-- THESPIKE.GG Event Listing: https://www.thespike.gg/events/valorant-champions-tour-2026-masters-london-2026/4148
-- Valve / Dota 2: https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf
+## 子专题矩阵
 
-## 贡献
+不同项目使用不同颜色和缩略标识，专题站卡片里也会按同一套视觉规范展示。
 
-新增条目请优先提交官方/主办方链接；暂时没有详情页时，可以先登记权威聚合来源，并在 description 中说明“精确赛程发布后拆分”。
+| 子专题 | 条目 | 视觉/内容边界 | 下一条代表节点 |
+| --- | ---: | --- | --- |
+| ![CS2](https://img.shields.io/badge/CS2-3%20%E6%9D%A1-D97706) | 3 | IEM / Major / EWC | [IEM Cologne Major 2026](https://pro.eslgaming.com/tour/csgo/cologne) |
+| ![VALORANT](https://img.shields.io/badge/VALORANT-1%20%E6%9D%A1-E11D48) | 1 | VCT Masters 与国际赛 | [VALORANT Masters London 2026](https://www.thespike.gg/events/valorant-champions-tour-2026-masters-london-2026/4148) |
+| ![王者荣耀](https://img.shields.io/badge/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80-4%20%E6%9D%A1-DC2626) | 4 | ENC / EWC 王者荣耀项目 | [Honor of Kings ENC Ranking Cutoff](https://esportsnationscup.com/en/press-releases/enc-adds-honor-of-kings-to-the-games-lineup) |
+| ![Dota 2](https://img.shields.io/badge/Dota%202-2%20%E6%9D%A1-7C2D12) | 2 | The International 与预选赛 | [The International 2026 Open Qualifiers](https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf) |
+| ![英雄联盟](https://img.shields.io/badge/%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F-5%20%E6%9D%A1-2563EB) | 5 | MSI / Worlds / LCS / EWC | [LCS Spring Finals 2026](https://lolesports.com/en-US/news/lcs-spring-finals-heads-to-asu-at-mullett-arena) |
+| ![综合电竞](https://img.shields.io/badge/%E7%BB%BC%E5%90%88%E7%94%B5%E7%AB%9E-1%20%E6%9D%A1-7C3AED) | 1 | 电竞世界杯综合窗口 | [Esports World Cup 2026](https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games) |
+
+## 近期节点
+
+| 类型 | 事件 | 日期窗口 | 阶段 | 来源 |
+| --- | --- | --- | --- | --- |
+| ![CS2](https://img.shields.io/badge/CS2-%E5%BC%80%E8%B5%9B-D97706) | [IEM Cologne Major 2026](https://pro.eslgaming.com/tour/csgo/cologne) | Jun 2-21, 2026 | 开赛 | ESL Pro Tour |
+| ![VALORANT](https://img.shields.io/badge/VALORANT-%E5%BC%80%E8%B5%9B-E11D48) | [VALORANT Masters London 2026](https://www.thespike.gg/events/valorant-champions-tour-2026-masters-london-2026/4148) | Jun 6-21, 2026 | 开赛 | THESPIKE.GG Event Listing |
+| ![王者荣耀](https://img.shields.io/badge/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80-%E8%B5%84%E6%A0%BC%2F%E6%8E%92%E5%90%8D-DC2626) | [Honor of Kings ENC Ranking Cutoff](https://esportsnationscup.com/en/press-releases/enc-adds-honor-of-kings-to-the-games-lineup) | Jun 7, 2026 | 资格/排名 | Esports Nations Cup |
+| ![Dota 2](https://img.shields.io/badge/Dota%202-%E8%B5%84%E6%A0%BC%2F%E6%8E%92%E5%90%8D-7C2D12) | [The International 2026 Open Qualifiers](https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf) | Jun 9-12, 2026 | 资格/排名 | Valve / Dota 2 |
+| ![英雄联盟](https://img.shields.io/badge/%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F-%E5%86%B3%E8%B5%9B-2563EB) | [LCS Spring Finals 2026](https://lolesports.com/en-US/news/lcs-spring-finals-heads-to-asu-at-mullett-arena) | Jun 13-14, 2026 | 决赛 | LoL Esports |
+| ![英雄联盟](https://img.shields.io/badge/%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F-%E5%BC%80%E8%B5%9B-2563EB) | [Mid-Season Invitational 2026](https://lolesports.com/en-US/news/msi-and-worlds-updates) | Jun 28 - Jul 12, 2026 | 开赛 | LoL Esports |
+| ![王者荣耀](https://img.shields.io/badge/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80-%E8%B5%84%E6%A0%BC%2F%E6%8E%92%E5%90%8D-DC2626) | [Honor of Kings ENC Regional Qualifiers](https://esportsnationscup.com/en/press-releases/enc-adds-honor-of-kings-to-the-games-lineup) | Jul 3-5, 2026 | 资格/排名 | Esports Nations Cup |
+| ![综合电竞](https://img.shields.io/badge/%E7%BB%BC%E5%90%88%E7%94%B5%E7%AB%9E-%E9%A1%B9%E7%9B%AE%E7%AA%97%E5%8F%A3-7C3AED) | [Esports World Cup 2026](https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games) | Jul 6 - Aug 23, 2026 | 项目窗口 | Esports World Cup |
+
+## 数据来源
+
+来源策略：官方/主办方优先；当官方详情页尚未开放时，允许使用权威聚合页作为临时入口，并在后续 crawler 中替换为官方详情 URL。
+
+| 来源 | Adapter | 入口 | 关联条目 |
+| --- | --- | --- | ---: |
+| BLAST / PGL Event Listing | `event-listing` | [blast.tv](https://blast.tv/cs/tournaments/pgl-singapore-major-2026) | 1 |
+| ESL Pro Tour | `esl-cs2` | [pro.eslgaming.com](https://pro.eslgaming.com/tour/csgo/cologne) | 1 |
+| Esports Nations Cup | `honor-of-kings-enc` | [esportsnationscup.com](https://esportsnationscup.com/en/press-releases/enc-adds-honor-of-kings-to-the-games-lineup) | 3 |
+| Esports World Cup | `esports-world-cup` | [esportsworldcup.com](https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games) | 3 |
+| Esports World Cup | `esports-world-cup` | [esportsworldcup.com](https://www.esportsworldcup.com/en/news/cs2-locked-in-for-ewc-2026-2027) | 1 |
+| LoL Esports | `lol-esports` | [lolesports.com](https://lolesports.com/en-US/news/lcs-spring-finals-heads-to-asu-at-mullett-arena) | 1 |
+| LoL Esports | `lol-esports` | [lolesports.com](https://lolesports.com/en-US/news/msi-and-worlds-updates) | 3 |
+| THESPIKE.GG Event Listing | `event-listing` | [thespike.gg](https://www.thespike.gg/events/valorant-champions-tour-2026-masters-london-2026/4148) | 1 |
+| Valve / Dota 2 | `valve-dota2` | [cdn.cloudflare.steamstatic.com](https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf) | 2 |
+
+## 自动化链路
+
+```mermaid
+flowchart LR
+  A["source-specific crawler"] --> B["data/items.json"]
+  B --> C["validator"]
+  C --> D["link-check"]
+  D --> E["GitHub Pages"]
+  E --> F["repository_dispatch"]
+  F --> G["Just-DDL Hub 同步"]
+```
+
+## 本地检查
+
+```bash
+npm run crawl
+npm run validate
+npm run link-check
+```
+
+`link-check` 默认是 warning-only。等官方详情 URL 更稳定后，可以设置 `STRICT_LINK_CHECK=1` 切到严格模式。
+
+## 目录结构
+
+```text
+.
+├─ data/
+│  ├─ items.json
+│  ├─ sources.json
+│  └─ crawl-report.json
+├─ scripts/
+│  ├─ crawl-sources.mjs
+│  ├─ validate-data.mjs
+│  └─ link-check.mjs
+├─ .github/workflows/
+│  ├─ deploy-pages.yml
+│  └─ update-data.yml
+└─ index.html
+```
+
+## 贡献数据
+
+新增条目请优先提供：
+
+- 官方/主办方页面 URL
+- 明确的 deadline 或 event start 时间
+- 子专题归属
+- 来源说明
 
 微信小程序版本即将上线，敬请期待。
