@@ -1,12 +1,32 @@
 import fs from 'node:fs';
 
-const items = JSON.parse(fs.readFileSync(new URL('../data/items.json', import.meta.url), 'utf8'));
-const sources = JSON.parse(fs.readFileSync(new URL('../data/sources.json', import.meta.url), 'utf8'));
+const dataRoot = new URL('../data/', import.meta.url);
 const strict = process.env.STRICT_LINK_CHECK === '1';
 const timeoutMs = Number(process.env.LINK_CHECK_TIMEOUT_MS || 4500);
 const concurrency = Number(process.env.LINK_CHECK_CONCURRENCY || 8);
-const urls = [...new Set([...items.map(item => item.url), ...sources.sourceFamilies.map(source => source.url)].filter(Boolean))];
+const urls = [...new Set([...readAllItems().map(item => item.url), ...readAllSources().map(source => source.url)].filter(Boolean))];
 const failures = [];
+
+function jsonFiles(name) {
+  const files = [new URL(name, dataRoot)].filter(file => fs.existsSync(file));
+  for (const entry of fs.readdirSync(dataRoot, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const path = new URL(`${entry.name}/${name}`, dataRoot);
+    if (fs.existsSync(path)) files.push(path);
+  }
+  return files;
+}
+
+function readAllItems() {
+  return jsonFiles('items.json').flatMap(file => JSON.parse(fs.readFileSync(file, 'utf8')));
+}
+
+function readAllSources() {
+  return jsonFiles('sources.json').flatMap(file => {
+    const value = JSON.parse(fs.readFileSync(file, 'utf8'));
+    return Array.isArray(value.sourceFamilies) ? value.sourceFamilies : [];
+  });
+}
 
 async function check(url) {
   const controller = new AbortController();

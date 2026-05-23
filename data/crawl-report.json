@@ -1,7 +1,12 @@
 {
-  "generatedAt": "2026-05-19T06:34:05.838Z",
+  "generatedAt": "2026-05-23T19:16:46.196Z",
+  "dataSets": [
+    "game-ddl",
+    "game-version-ddl"
+  ],
   "checks": [
     {
+      "topicId": "game-ddl",
       "id": "blast-pgl-event-listing-blast-tv-cs-tournaments-pgl-singapore-major-2026",
       "name": "BLAST / PGL Event Listing",
       "url": "https://blast.tv/cs/tournaments/pgl-singapore-major-2026",
@@ -20,9 +25,11 @@
         "Major"
       ],
       "relatedItemCount": 1,
-      "checkedAt": "2026-05-19T06:34:05.355Z"
+      "generatedItemCount": 0,
+      "checkedAt": "2026-05-23T19:16:39.862Z"
     },
     {
+      "topicId": "game-ddl",
       "id": "esl-pro-tour-pro-eslgaming-com-tour-csgo-cologne",
       "name": "ESL Pro Tour",
       "url": "https://pro.eslgaming.com/tour/csgo/cologne",
@@ -41,9 +48,11 @@
         "Major"
       ],
       "relatedItemCount": 1,
-      "checkedAt": "2026-05-19T06:34:05.576Z"
+      "generatedItemCount": 0,
+      "checkedAt": "2026-05-23T19:16:42.200Z"
     },
     {
+      "topicId": "game-ddl",
       "id": "esports-nations-cup-esportsnationscup-com-en-press-releases-enc-adds-hon",
       "name": "Esports Nations Cup",
       "url": "https://esportsnationscup.com/en/press-releases/enc-adds-honor-of-kings-to-the-games-lineup",
@@ -61,9 +70,11 @@
         "Event start"
       ],
       "relatedItemCount": 3,
-      "checkedAt": "2026-05-19T06:34:04.755Z"
+      "generatedItemCount": 0,
+      "checkedAt": "2026-05-23T19:16:39.781Z"
     },
     {
+      "topicId": "game-ddl",
       "id": "esports-world-cup-esportsworldcup-com-en-news-ewc26-confirms-the-return-",
       "name": "Esports World Cup",
       "url": "https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games",
@@ -81,9 +92,11 @@
         "Honor of Kings"
       ],
       "relatedItemCount": 3,
-      "checkedAt": "2026-05-19T06:34:05.078Z"
+      "generatedItemCount": 0,
+      "checkedAt": "2026-05-23T19:16:43.085Z"
     },
     {
+      "topicId": "game-ddl",
       "id": "esports-world-cup-www-esportsworldcup-com-en-news-cs2-locked-in-for-ewc-",
       "name": "Esports World Cup",
       "url": "https://www.esportsworldcup.com/en/news/cs2-locked-in-for-ewc-2026-2027",
@@ -102,9 +115,11 @@
         "Counter-Strike 2"
       ],
       "relatedItemCount": 1,
-      "checkedAt": "2026-05-19T06:34:04.823Z"
+      "generatedItemCount": 0,
+      "checkedAt": "2026-05-23T19:16:40.137Z"
     },
     {
+      "topicId": "game-ddl",
       "id": "lol-esports-lolesports-com-en-us-news-lcs-spring-finals-heads-to-asu-at-",
       "name": "LoL Esports",
       "url": "https://lolesports.com/en-US/news/lcs-spring-finals-heads-to-asu-at-mullett-arena",
@@ -121,9 +136,11 @@
         "LCS"
       ],
       "relatedItemCount": 1,
-      "checkedAt": "2026-05-19T06:34:04.993Z"
+      "generatedItemCount": 0,
+      "checkedAt": "2026-05-23T19:16:40.388Z"
     },
     {
+      "topicId": "game-ddl",
       "id": "lol-esports-lolesports-com-en-us-news-msi-and-worlds-updates",
       "name": "LoL Esports",
       "url": "https://lolesports.com/en-US/news/msi-and-worlds-updates",
@@ -141,9 +158,11 @@
         "Grand Final"
       ],
       "relatedItemCount": 3,
-      "checkedAt": "2026-05-19T06:34:05.762Z"
+      "generatedItemCount": 0,
+      "checkedAt": "2026-05-23T19:16:43.783Z"
     },
     {
+      "topicId": "game-ddl",
       "id": "thespike-gg-event-listing-www-thespike-gg-events-valorant-champions-tour",
       "name": "THESPIKE.GG Event Listing",
       "url": "https://www.thespike.gg/events/valorant-champions-tour-2026-masters-london-2026/4148",
@@ -162,9 +181,11 @@
         "Masters"
       ],
       "relatedItemCount": 1,
-      "checkedAt": "2026-05-19T06:34:05.838Z"
+      "generatedItemCount": 0,
+      "checkedAt": "2026-05-23T19:16:45.405Z"
     },
     {
+      "topicId": "game-ddl",
       "id": "valve-dota-2-cdn-cloudflare-steamstatic-com-apps-dota2-assets-rfp-ti-202",
       "name": "Valve / Dota 2",
       "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf",
@@ -176,7 +197,46 @@
       "title": "",
       "matchedMarkers": [],
       "relatedItemCount": 2,
-      "checkedAt": "2026-05-19T06:34:05.617Z"
+      "generatedItemCount": 0,
+      "checkedAt": "2026-05-23T19:16:43.832Z"
+    },
+    {
+      "topicId": "game-version-ddl",
+      "id": "riot-lol-2026-patch-schedule",
+      "name": "League of Legends Support",
+      "url": "https://support-leagueoflegends.riotgames.com/hc/en-us/articles/360018987893-Patch-Schedule-League-of-Legends",
+      "adapter": "riot-lol-patch-schedule",
+      "ok": false,
+      "status": 403,
+      "finalUrl": "https://support-leagueoflegends.riotgames.com/hc/en-us/articles/360018987893-Patch-Schedule-League-of-Legends",
+      "contentType": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "matchedMarkers": [],
+      "relatedItemCount": 0,
+      "generatedItemCount": 0,
+      "checkedAt": "2026-05-23T19:16:45.990Z"
+    },
+    {
+      "topicId": "game-version-ddl",
+      "id": "riot-tft-2026-patch-schedule",
+      "name": "Teamfight Tactics Support",
+      "url": "https://support-teamfighttactics.riotgames.com/hc/en-us/articles/37127675562387-Patch-Schedule-Teamfight-Tactics",
+      "adapter": "riot-tft-patch-schedule",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://support-teamfighttactics.riotgames.com/hc/en-us/articles/37127675562387-Patch-Schedule-Teamfight-Tactics",
+      "contentType": "text/html; charset=utf-8",
+      "title": "Patch Schedule - Teamfight Tactics &ndash; Teamfight Tactics Support",
+      "matchedMarkers": [
+        "Teamfight Tactics",
+        "Patch Schedule",
+        "TFT17.4",
+        "TFT17.5",
+        "Riot Games"
+      ],
+      "relatedItemCount": 0,
+      "generatedItemCount": 0,
+      "checkedAt": "2026-05-23T19:16:46.196Z"
     }
   ]
 }

@@ -6,7 +6,7 @@
 
 <p align="center">
   英雄联盟、王者荣耀、VALORANT、CS2、Dota 2 和电竞世界杯的赛事节点追踪。<br>
-  给观赛用户、战队运营、赛事编辑和电竞内容创作者使用：按项目折叠，按开赛/预选/决赛倒计时。
+  现在也作为 Just-DDL 的游戏专题族仓库，额外输出游戏版本更新倒计时。
 </p>
 
 <p align="center">
@@ -36,11 +36,25 @@
 
 | 指标 | 当前值 |
 | --- | ---: |
-| DDL 条目 | 16 |
-| 子专题 | 6 |
-| 来源族 | 9 |
+| 电竞赛事条目 | 16 |
+| 游戏版本条目 | 10 |
+| 子专题 | 8 |
+| 来源族 | 11 |
 | Pages | [https://just-agent.github.io/game-ddl/](https://just-agent.github.io/game-ddl/) |
 | Hub | [https://just-agent.github.io/just-ddl/#/topic/game-ddl](https://just-agent.github.io/just-ddl/#/topic/game-ddl) |
+
+## 专题族数据出口
+
+`game-ddl` 保持原仓库名和 Pages 地址不变，但同时为 Hub 输出两个 Topic：
+
+| Hub Topic | 数据出口 | 来源策略 |
+| --- | --- | --- |
+| `game-ddl` 电竞赛事 | [`data/items.json`](data/items.json) | 赛事官网、主办方公告和权威赛事页 |
+| `game-version-ddl` 游戏版本 | [`data/game-version-ddl/items.json`](data/game-version-ddl/items.json) | Riot 官方 LoL/TFT patch schedule，后续可扩展到更多官方版本公告 |
+
+Hub 注册 `game-version-ddl` 时使用 `sourceMode: "cluster"`、`clusterId: "game-ddl"` 和 `dataUrl: "data/game-version-ddl/items.json"`。这样一个仓库可以维护相近专题，但用户在主题广场里仍能收藏独立 Topic。
+
+备注：Riot Support 页面在部分 CI/Node 环境可能返回 403 防护页；crawler 会记录访问状态，当前版本数据按官方 schedule 人工核验后写入 JSON，后续如果官方开放稳定接口再切到自动解析。
 
 ## 子专题矩阵
 
@@ -54,6 +68,7 @@
 | ![Dota 2](https://img.shields.io/badge/Dota%202-2%20%E6%9D%A1-7C2D12) | 2 | The International 与预选赛 | [The International 2026 Open Qualifiers](https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf) |
 | ![英雄联盟](https://img.shields.io/badge/%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F-5%20%E6%9D%A1-2563EB) | 5 | MSI / Worlds / LCS / EWC | [LCS Spring Finals 2026](https://lolesports.com/en-US/news/lcs-spring-finals-heads-to-asu-at-mullett-arena) |
 | ![综合电竞](https://img.shields.io/badge/%E7%BB%BC%E5%90%88%E7%94%B5%E7%AB%9E-1%20%E6%9D%A1-7C3AED) | 1 | 电竞世界杯综合窗口 | [Esports World Cup 2026](https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games) |
+| ![游戏版本](https://img.shields.io/badge/%E6%B8%B8%E6%88%8F%E7%89%88%E6%9C%AC-10%20%E6%9D%A1-0EA5E9) | 10 | LoL / TFT patch schedule | [League of Legends Patch 26.11](https://support-leagueoflegends.riotgames.com/hc/en-us/articles/360018987893-Patch-Schedule-League-of-Legends) |
 
 ## 近期节点
 
@@ -83,6 +98,8 @@
 | LoL Esports | `lol-esports` | [lolesports.com](https://lolesports.com/en-US/news/msi-and-worlds-updates) | 3 |
 | THESPIKE.GG Event Listing | `event-listing` | [thespike.gg](https://www.thespike.gg/events/valorant-champions-tour-2026-masters-london-2026/4148) | 1 |
 | Valve / Dota 2 | `valve-dota2` | [cdn.cloudflare.steamstatic.com](https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf) | 2 |
+| League of Legends Support | `riot-lol-patch-schedule` | [support-leagueoflegends.riotgames.com](https://support-leagueoflegends.riotgames.com/hc/en-us/articles/360018987893-Patch-Schedule-League-of-Legends) | 5 |
+| Teamfight Tactics Support | `riot-tft-patch-schedule` | [support-teamfighttactics.riotgames.com](https://support-teamfighttactics.riotgames.com/hc/en-us/articles/37127675562387-Patch-Schedule-Teamfight-Tactics) | 5 |
 
 ## 自动化链路
 
@@ -113,7 +130,10 @@ npm run link-check
 ├─ data/
 │  ├─ items.json
 │  ├─ sources.json
-│  └─ crawl-report.json
+│  ├─ crawl-report.json
+│  └─ game-version-ddl/
+│     ├─ items.json
+│     └─ sources.json
 ├─ scripts/
 │  ├─ crawl-sources.mjs
 │  ├─ validate-data.mjs

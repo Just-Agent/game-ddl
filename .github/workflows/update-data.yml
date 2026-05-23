@@ -29,7 +29,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'data: update game-ddl crawl results'
-          file_pattern: 'data/*.json'
+          file_pattern: 'data/*.json data/*/*.json'
       - name: Notify Just-DDL Hub
         if: ${{ env.DISPATCH_TOKEN != '' }}
         env:
