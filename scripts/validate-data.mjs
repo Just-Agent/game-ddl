@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 
 const dataRoot = new URL('../data/', import.meta.url);
-const required = ['id', 'title', 'deadline', 'dateRange', 'location', 'tags', 'url', 'status', 'source'];
+const required = ['id', 'title', 'dateRange', 'location', 'tags', 'url', 'status', 'source'];
 const ids = new Set();
 const errors = [];
 let total = 0;
@@ -26,7 +26,23 @@ for (const file of itemFiles()) {
     }
     if (ids.has(item.id)) errors.push(`duplicate id ${item.id}`);
     ids.add(item.id);
-    if (!Number.isFinite(new Date(item.deadline).getTime())) errors.push(`${item.id} has invalid deadline`);
+    const isHistory = item.type === 'historyEvent' || item.type === 'officialRelease';
+    const isForecast = item.type === 'forecastWindow' || Boolean(item.estimatedNextWindow);
+    if (isHistory) {
+      if (!item.date || !Number.isFinite(new Date(item.date).getTime())) errors.push(`${item.id} history item must include valid date`);
+    } else if (isForecast) {
+      if (!item.isDatePlaceholder) errors.push(`${item.id} forecast item must set isDatePlaceholder`);
+      if (!item.estimatedNextWindow?.start || !item.estimatedNextWindow?.end) errors.push(`${item.id} forecast item must include estimatedNextWindow`);
+      if (item.estimatedNextWindow?.start && !Number.isFinite(new Date(item.estimatedNextWindow.start).getTime())) errors.push(`${item.id} has invalid estimatedNextWindow.start`);
+      if (item.estimatedNextWindow?.end && !Number.isFinite(new Date(item.estimatedNextWindow.end).getTime())) errors.push(`${item.id} has invalid estimatedNextWindow.end`);
+      if (!item.lastOfficialDate || !Number.isFinite(new Date(item.lastOfficialDate).getTime())) errors.push(`${item.id} forecast item must include lastOfficialDate`);
+      if (!Array.isArray(item.basisEvents) || item.basisEvents.length < 2) errors.push(`${item.id} forecast item must include at least two basisEvents`);
+      if (!item.forecastBasis) errors.push(`${item.id} forecast item must include forecastBasis`);
+      if (!['low', 'medium', 'high'].includes(String(item.confidence || ''))) errors.push(`${item.id} forecast item must include confidence`);
+    } else if (!item.deadline && !item.isDatePlaceholder) {
+      errors.push(`${item.id} missing deadline, date, forecast window, or isDatePlaceholder`);
+    }
+    if (item.deadline && !Number.isFinite(new Date(item.deadline).getTime())) errors.push(`${item.id} has invalid deadline`);
     try { new URL(item.url); } catch { errors.push(`${item.id} has invalid url`); }
     if (item.sourceUrl) {
       try { new URL(item.sourceUrl); } catch { errors.push(`${item.id} has invalid sourceUrl`); }

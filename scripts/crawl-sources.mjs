@@ -110,6 +110,12 @@ function dateFromParts(monthName, day, year) {
   return `${year}-${month}-${String(day).padStart(2, '0')}`;
 }
 
+function formatDateRange(monthName, day, year) {
+  const date = dateFromParts(monthName, day, year);
+  const weekday = new Date(`${date}T12:00:00Z`).toLocaleDateString('en-US', { weekday: 'long', timeZone: 'UTC' });
+  return `${monthName} ${Number(day)}, ${year} (${weekday}) (Pacific Time)`;
+}
+
 function parseRiotPatchSchedule(source, text) {
   const pattern = source.adapter === 'riot-tft-patch-schedule'
     ? /\b(TFT\d{2}\.\d)\s+([A-Za-z]+)\s+(\d{1,2}),\s+(2026)\b/g
@@ -123,31 +129,42 @@ function parseRiotPatchSchedule(source, text) {
     const date = dateFromParts(monthName, day, year);
     if (!date || seen.has(patch)) continue;
     seen.add(patch);
-    if (Date.parse(`${date}T23:59:59`) < today.getTime()) continue;
     const patchSlug = patch.toLowerCase().replaceAll('.', '-');
     const gameName = source.gameName || 'Game';
     const subtopic = source.subtopic || 'game-version';
-    items.push({
+    const hasEnded = Date.parse(`${date}T23:59:59`) < today.getTime();
+    const baseItem = {
+      topicId: source.topicId || 'game-version-ddl',
       id: `${source.itemPrefix}-${patchSlug}-${date}`,
       title: `${gameName} Patch ${patch}`,
-      deadline: `${date}T23:59:59${pacificOffset(date)}`,
-      dateRange: `${monthName} ${Number(day)}, ${year} (Pacific Time)`,
+      dateRange: formatDateRange(monthName, day, year),
       location: 'Online',
       isOnline: true,
       tags: source.tags || ['game update', 'patch'],
       url: source.url,
-      status: 'upcoming',
-      description: `${source.name} 官方 2026 patch schedule 中的版本发布日期。具体上线时间以官方客户端与公告为准。`,
-      stage: 'Version release',
       source: source.name,
       sourceUrl: source.url,
       canonicalUrl: `${source.url}#${patchSlug}`,
-      type: 'release',
       subtopic,
       subtopicName: source.subtopicName || gameName,
+    };
+    items.push({
+      ...baseItem,
+      ...(hasEnded ? { date } : { deadline: `${date}T23:59:59${pacificOffset(date)}` }),
+      status: hasEnded ? 'ended' : 'upcoming',
+      description: hasEnded
+        ? `Riot 官方 2026 ${gameName} patch schedule 中的 Patch ${patch} 已发布节点。该节点用于版本节奏分析，不作为未来倒计时。`
+        : `Riot 官方 2026 ${gameName} patch schedule 中的 Patch ${patch} 计划发布日期。具体上线时间以官方客户端与公告为准。`,
+      stage: hasEnded ? 'Official patch release' : 'Version release',
+      type: hasEnded ? 'officialRelease' : 'release',
+      sourceLabel: hasEnded ? '官方历史节点' : '官方版本表',
     });
   }
-  return items.sort((a, b) => Date.parse(a.deadline) - Date.parse(b.deadline)).slice(0, source.maxItems || 8);
+  return items.sort((a, b) => {
+    const left = Date.parse(a.date || a.deadline);
+    const right = Date.parse(b.date || b.deadline);
+    return left - right;
+  }).slice(0, source.maxItems || 32);
 }
 
 async function checkSource(source, topicItems) {
@@ -199,7 +216,16 @@ for (const dataSet of dataSets) {
   }
   const generatedItems = sourceChecks.flatMap(check => check.generatedItems || []);
   if (generatedItems.length) {
-    fs.writeFileSync(dataSet.itemsPath, JSON.stringify(generatedItems, null, 2) + '\n', 'utf8');
+    const generatedSourceNames = new Set(
+      sourceChecks
+        .filter(check => (check.generatedItems || []).length)
+        .map(check => check.name)
+    );
+    const preservedItems = dataSet.items.filter(item => {
+      if (item.type === 'forecastWindow' || item.isDatePlaceholder) return true;
+      return !generatedSourceNames.has(item.source);
+    });
+    fs.writeFileSync(dataSet.itemsPath, JSON.stringify([...generatedItems, ...preservedItems], null, 2) + '\n', 'utf8');
   }
   dataSet.sources.generatedAt = new Date().toISOString();
   dataSet.sources.sourceFamilies = sourceFamilies.map(source => ({ ...source, lastCheckedAt: dataSet.sources.generatedAt }));

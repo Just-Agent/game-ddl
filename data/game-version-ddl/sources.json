@@ -1,6 +1,6 @@
 {
   "topicId": "game-version-ddl",
-  "generatedAt": "2026-05-23T19:16:46.196Z",
+  "generatedAt": "2026-05-24T10:08:21.853Z",
   "sourcePolicy": "official patch schedules first; generated items keep sourceUrl and canonicalUrl",
   "strictLinkCheckReady": false,
   "sourceFamilies": [
@@ -18,15 +18,25 @@
         "League of Legends",
         "patch"
       ],
-      "maxItems": 8,
+      "maxItems": 32,
       "expectedMarkers": [
         "Patch Schedule",
+        "26.01",
         "26.11",
-        "26.12",
+        "26.24",
         "Riot Games"
       ],
-      "relatedItems": [],
-      "lastCheckedAt": "2026-05-23T19:16:46.196Z"
+      "relatedItems": [
+        "game-version-ddl-lol-26-01-2026-01-08",
+        "game-version-ddl-lol-26-24-2026-12-09",
+        "game-version-ddl-lol-first-patch-2027-forecast"
+      ],
+      "lastCheckedAt": "2026-05-24T10:08:21.853Z",
+      "coverage": [
+        "League of Legends 2026 patch schedule",
+        "2026 history nodes",
+        "2027 first-patch forecast"
+      ]
     },
     {
       "id": "riot-tft-2026-patch-schedule",
@@ -42,7 +52,7 @@
         "Teamfight Tactics",
         "patch"
       ],
-      "maxItems": 8,
+      "maxItems": 32,
       "expectedMarkers": [
         "Patch Schedule",
         "TFT17.4",
@@ -50,7 +60,7 @@
         "Riot Games"
       ],
       "relatedItems": [],
-      "lastCheckedAt": "2026-05-23T19:16:46.196Z"
+      "lastCheckedAt": "2026-05-24T10:08:21.853Z"
     }
   ]
 }

@@ -2,7 +2,7 @@
   <img src="docs/assets/topic-map.svg" alt="电竞赛事 DDL topic map" width="920">
 </p>
 
-<h1 align="center">电竞赛事 DDL</h1>
+<h1 align="center">电竞赛事与游戏版本 DDL</h1>
 
 <p align="center">
   英雄联盟、王者荣耀、VALORANT、CS2、Dota 2 和电竞世界杯的赛事节点追踪。<br>
@@ -37,7 +37,7 @@
 | 指标 | 当前值 |
 | --- | ---: |
 | 电竞赛事条目 | 16 |
-| 游戏版本条目 | 10 |
+| 游戏版本条目 | 30 |
 | 子专题 | 8 |
 | 来源族 | 11 |
 | Pages | [https://just-agent.github.io/game-ddl/](https://just-agent.github.io/game-ddl/) |
@@ -52,9 +52,11 @@
 | `game-ddl` 电竞赛事 | [`data/items.json`](data/items.json) | 赛事官网、主办方公告和权威赛事页 |
 | `game-version-ddl` 游戏版本 | [`data/game-version-ddl/items.json`](data/game-version-ddl/items.json) | Riot 官方 LoL/TFT patch schedule，后续可扩展到更多官方版本公告 |
 
-Hub 注册 `game-version-ddl` 时使用 `sourceMode: "cluster"`、`clusterId: "game-ddl"` 和 `dataUrl: "data/game-version-ddl/items.json"`。这样一个仓库可以维护相近专题，但用户在主题广场里仍能收藏独立 Topic。
+Hub 注册 `game-version-ddl` 时会把它当作独立 Topic 展示。这样一个仓库可以维护相近专题，但用户在主题广场里仍能单独收藏“电竞赛事”或“游戏版本”。
 
-备注：Riot Support 页面在部分 CI/Node 环境可能返回 403 防护页；crawler 会记录访问状态，当前版本数据按官方 schedule 人工核验后写入 JSON，后续如果官方开放稳定接口再切到自动解析。
+公开说明：Riot Support 页面在部分自动化环境可能触发访问保护；当前版本按官方 patch schedule 核验后写入 JSON，并保留 crawler 检查链路，页面展示仍以官方来源链接为准。
+
+`game-version-ddl` 已加入 LoL 2026 官方 patch schedule：已经发布的 patch 进入历史节点，未来 patch 进入官方倒计时；2027 年首个 patch 仅显示为预测窗口，不作为 Riot 官方日期。
 
 ## 子专题矩阵
 
@@ -68,7 +70,7 @@ Hub 注册 `game-version-ddl` 时使用 `sourceMode: "cluster"`、`clusterId: "g
 | ![Dota 2](https://img.shields.io/badge/Dota%202-2%20%E6%9D%A1-7C2D12) | 2 | The International 与预选赛 | [The International 2026 Open Qualifiers](https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf) |
 | ![英雄联盟](https://img.shields.io/badge/%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F-5%20%E6%9D%A1-2563EB) | 5 | MSI / Worlds / LCS / EWC | [LCS Spring Finals 2026](https://lolesports.com/en-US/news/lcs-spring-finals-heads-to-asu-at-mullett-arena) |
 | ![综合电竞](https://img.shields.io/badge/%E7%BB%BC%E5%90%88%E7%94%B5%E7%AB%9E-1%20%E6%9D%A1-7C3AED) | 1 | 电竞世界杯综合窗口 | [Esports World Cup 2026](https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games) |
-| ![游戏版本](https://img.shields.io/badge/%E6%B8%B8%E6%88%8F%E7%89%88%E6%9C%AC-10%20%E6%9D%A1-0EA5E9) | 10 | LoL / TFT patch schedule | [League of Legends Patch 26.11](https://support-leagueoflegends.riotgames.com/hc/en-us/articles/360018987893-Patch-Schedule-League-of-Legends) |
+| ![游戏版本](https://img.shields.io/badge/%E6%B8%B8%E6%88%8F%E7%89%88%E6%9C%AC-30%20%E6%9D%A1-0EA5E9) | 30 | LoL / TFT patch schedule、历史版本和预测窗口 | [League of Legends Patch 26.11](https://support-leagueoflegends.riotgames.com/hc/en-us/articles/360018987893-Patch-Schedule-League-of-Legends) |
 
 ## 近期节点
 
@@ -87,19 +89,19 @@ Hub 注册 `game-version-ddl` 时使用 `sourceMode: "cluster"`、`clusterId: "g
 
 来源策略：官方/主办方优先；当官方详情页尚未开放时，允许使用权威聚合页作为临时入口，并在后续 crawler 中替换为官方详情 URL。
 
-| 来源 | Adapter | 入口 | 关联条目 |
+| 来源 | 类型 | 入口 | 关联条目 |
 | --- | --- | --- | ---: |
-| BLAST / PGL Event Listing | `event-listing` | [blast.tv](https://blast.tv/cs/tournaments/pgl-singapore-major-2026) | 1 |
-| ESL Pro Tour | `esl-cs2` | [pro.eslgaming.com](https://pro.eslgaming.com/tour/csgo/cologne) | 1 |
-| Esports Nations Cup | `honor-of-kings-enc` | [esportsnationscup.com](https://esportsnationscup.com/en/press-releases/enc-adds-honor-of-kings-to-the-games-lineup) | 3 |
-| Esports World Cup | `esports-world-cup` | [esportsworldcup.com](https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games) | 3 |
-| Esports World Cup | `esports-world-cup` | [esportsworldcup.com](https://www.esportsworldcup.com/en/news/cs2-locked-in-for-ewc-2026-2027) | 1 |
-| LoL Esports | `lol-esports` | [lolesports.com](https://lolesports.com/en-US/news/lcs-spring-finals-heads-to-asu-at-mullett-arena) | 1 |
-| LoL Esports | `lol-esports` | [lolesports.com](https://lolesports.com/en-US/news/msi-and-worlds-updates) | 3 |
-| THESPIKE.GG Event Listing | `event-listing` | [thespike.gg](https://www.thespike.gg/events/valorant-champions-tour-2026-masters-london-2026/4148) | 1 |
-| Valve / Dota 2 | `valve-dota2` | [cdn.cloudflare.steamstatic.com](https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf) | 2 |
-| League of Legends Support | `riot-lol-patch-schedule` | [support-leagueoflegends.riotgames.com](https://support-leagueoflegends.riotgames.com/hc/en-us/articles/360018987893-Patch-Schedule-League-of-Legends) | 5 |
-| Teamfight Tactics Support | `riot-tft-patch-schedule` | [support-teamfighttactics.riotgames.com](https://support-teamfighttactics.riotgames.com/hc/en-us/articles/37127675562387-Patch-Schedule-Teamfight-Tactics) | 5 |
+| BLAST / PGL Event Listing | 赛事页 | [blast.tv](https://blast.tv/cs/tournaments/pgl-singapore-major-2026) | 1 |
+| ESL Pro Tour | 赛事官网 | [pro.eslgaming.com](https://pro.eslgaming.com/tour/csgo/cologne) | 1 |
+| Esports Nations Cup | 主办方公告 | [esportsnationscup.com](https://esportsnationscup.com/en/press-releases/enc-adds-honor-of-kings-to-the-games-lineup) | 3 |
+| Esports World Cup | 主办方公告 | [esportsworldcup.com](https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games) | 3 |
+| Esports World Cup | 主办方公告 | [esportsworldcup.com](https://www.esportsworldcup.com/en/news/cs2-locked-in-for-ewc-2026-2027) | 1 |
+| LoL Esports | 官方赛事公告 | [lolesports.com](https://lolesports.com/en-US/news/lcs-spring-finals-heads-to-asu-at-mullett-arena) | 1 |
+| LoL Esports | 官方赛事公告 | [lolesports.com](https://lolesports.com/en-US/news/msi-and-worlds-updates) | 3 |
+| THESPIKE.GG Event Listing | 权威赛事页 | [thespike.gg](https://www.thespike.gg/events/valorant-champions-tour-2026-masters-london-2026/4148) | 1 |
+| Valve / Dota 2 | 官方文件 | [cdn.cloudflare.steamstatic.com](https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf) | 2 |
+| League of Legends Support | 官方版本表 | [support-leagueoflegends.riotgames.com](https://support-leagueoflegends.riotgames.com/hc/en-us/articles/360018987893-Patch-Schedule-League-of-Legends) | 25 |
+| Teamfight Tactics Support | 官方版本表 | [support-teamfighttactics.riotgames.com](https://support-teamfighttactics.riotgames.com/hc/en-us/articles/37127675562387-Patch-Schedule-Teamfight-Tactics) | 5 |
 
 ## 自动化链路
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-23T19:16:46.196Z",
+  "generatedAt": "2026-05-24T10:08:21.853Z",
   "dataSets": [
     "game-ddl",
     "game-version-ddl"
@@ -26,7 +26,7 @@
       ],
       "relatedItemCount": 1,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-23T19:16:39.862Z"
+      "checkedAt": "2026-05-24T10:08:15.923Z"
     },
     {
       "topicId": "game-ddl",
@@ -49,7 +49,7 @@
       ],
       "relatedItemCount": 1,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-23T19:16:42.200Z"
+      "checkedAt": "2026-05-24T10:08:18.102Z"
     },
     {
       "topicId": "game-ddl",
@@ -71,7 +71,7 @@
       ],
       "relatedItemCount": 3,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-23T19:16:39.781Z"
+      "checkedAt": "2026-05-24T10:08:15.823Z"
     },
     {
       "topicId": "game-ddl",
@@ -79,21 +79,10 @@
       "name": "Esports World Cup",
       "url": "https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games",
       "adapter": "esports-world-cup",
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://esportsworldcup.com/en/press-releases/ewc26-confirms-the-return-of-20-games",
-      "contentType": "text/html; charset=utf-8",
-      "title": "Esports World Cup 2026 Confirms the Return of 20 Games",
-      "matchedMarkers": [
-        "Esports World Cup",
-        "2026",
-        "Esports World Cup 2026",
-        "EWC",
-        "Honor of Kings"
-      ],
-      "relatedItemCount": 3,
-      "generatedItemCount": 0,
-      "checkedAt": "2026-05-23T19:16:43.085Z"
+      "ok": false,
+      "status": "error",
+      "error": "This operation was aborted",
+      "checkedAt": "2026-05-24T10:08:19.402Z"
     },
     {
       "topicId": "game-ddl",
@@ -116,7 +105,7 @@
       ],
       "relatedItemCount": 1,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-23T19:16:40.137Z"
+      "checkedAt": "2026-05-24T10:08:15.647Z"
     },
     {
       "topicId": "game-ddl",
@@ -137,7 +126,7 @@
       ],
       "relatedItemCount": 1,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-23T19:16:40.388Z"
+      "checkedAt": "2026-05-24T10:08:16.332Z"
     },
     {
       "topicId": "game-ddl",
@@ -159,7 +148,7 @@
       ],
       "relatedItemCount": 3,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-23T19:16:43.783Z"
+      "checkedAt": "2026-05-24T10:08:20.357Z"
     },
     {
       "topicId": "game-ddl",
@@ -182,7 +171,7 @@
       ],
       "relatedItemCount": 1,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-23T19:16:45.405Z"
+      "checkedAt": "2026-05-24T10:08:21.039Z"
     },
     {
       "topicId": "game-ddl",
@@ -198,7 +187,7 @@
       "matchedMarkers": [],
       "relatedItemCount": 2,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-23T19:16:43.832Z"
+      "checkedAt": "2026-05-24T10:08:20.160Z"
     },
     {
       "topicId": "game-version-ddl",
@@ -212,9 +201,9 @@
       "contentType": "text/html; charset=UTF-8",
       "title": "Just a moment...",
       "matchedMarkers": [],
-      "relatedItemCount": 0,
+      "relatedItemCount": 3,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-23T19:16:45.990Z"
+      "checkedAt": "2026-05-24T10:08:21.654Z"
     },
     {
       "topicId": "game-version-ddl",
@@ -236,7 +225,7 @@
       ],
       "relatedItemCount": 0,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-23T19:16:46.196Z"
+      "checkedAt": "2026-05-24T10:08:21.853Z"
     }
   ]
 }
