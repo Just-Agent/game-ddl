@@ -1,14 +1,12 @@
 {
   "topicId": "game-ddl",
   "generatedAt": "2026-05-24T10:08:21.039Z",
-  "sourcePolicy": "official-first; authoritative aggregators allowed only when organizer details are not exposed yet",
   "strictLinkCheckReady": false,
   "sourceFamilies": [
     {
       "id": "blast-pgl-event-listing-blast-tv-cs-tournaments-pgl-singapore-major-2026",
       "name": "BLAST / PGL Event Listing",
       "url": "https://blast.tv/cs/tournaments/pgl-singapore-major-2026",
-      "adapter": "event-listing",
       "expectedMarkers": [
         "PGL Singapore Major 2026",
         "Event start",
@@ -25,7 +23,6 @@
       "id": "esl-pro-tour-pro-eslgaming-com-tour-csgo-cologne",
       "name": "ESL Pro Tour",
       "url": "https://pro.eslgaming.com/tour/csgo/cologne",
-      "adapter": "esl-cs2",
       "expectedMarkers": [
         "IEM Cologne Major 2026",
         "Stage 1 start",
@@ -42,7 +39,6 @@
       "id": "esports-nations-cup-esportsnationscup-com-en-press-releases-enc-adds-hon",
       "name": "Esports Nations Cup",
       "url": "https://esportsnationscup.com/en/press-releases/enc-adds-honor-of-kings-to-the-games-lineup",
-      "adapter": "honor-of-kings-enc",
       "expectedMarkers": [
         "Honor of Kings ENC Ranking Cutoff",
         "Ranking cutoff",
@@ -66,7 +62,6 @@
       "id": "esports-world-cup-esportsworldcup-com-en-news-ewc26-confirms-the-return-",
       "name": "Esports World Cup",
       "url": "https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games",
-      "adapter": "esports-world-cup",
       "expectedMarkers": [
         "Esports World Cup 2026",
         "Event window opens",
@@ -90,7 +85,6 @@
       "id": "esports-world-cup-www-esportsworldcup-com-en-news-cs2-locked-in-for-ewc-",
       "name": "Esports World Cup",
       "url": "https://www.esportsworldcup.com/en/news/cs2-locked-in-for-ewc-2026-2027",
-      "adapter": "esports-world-cup",
       "expectedMarkers": [
         "Counter-Strike 2 at Esports World Cup 2026",
         "Event start",
@@ -107,7 +101,6 @@
       "id": "lol-esports-lolesports-com-en-us-news-lcs-spring-finals-heads-to-asu-at-",
       "name": "LoL Esports",
       "url": "https://lolesports.com/en-US/news/lcs-spring-finals-heads-to-asu-at-mullett-arena",
-      "adapter": "lol-esports",
       "expectedMarkers": [
         "LCS Spring Finals 2026",
         "Finals start",
@@ -118,14 +111,12 @@
       "relatedItems": [
         "game-ddl-lol-lcs-spring-finals-2026-06-13"
       ],
-      "linkCheckMode": "manual_verified",
       "lastCheckedAt": "2026-05-24T10:08:21.039Z"
     },
     {
       "id": "lol-esports-lolesports-com-en-us-news-msi-and-worlds-updates",
       "name": "LoL Esports",
       "url": "https://lolesports.com/en-US/news/msi-and-worlds-updates",
-      "adapter": "lol-esports",
       "expectedMarkers": [
         "Mid-Season Invitational 2026",
         "Event start",
@@ -149,7 +140,6 @@
       "id": "thespike-gg-event-listing-www-thespike-gg-events-valorant-champions-tour",
       "name": "THESPIKE.GG Event Listing",
       "url": "https://www.thespike.gg/events/valorant-champions-tour-2026-masters-london-2026/4148",
-      "adapter": "event-listing",
       "expectedMarkers": [
         "VALORANT Masters London 2026",
         "Event start",
@@ -166,7 +156,6 @@
       "id": "valve-dota-2-cdn-cloudflare-steamstatic-com-apps-dota2-assets-rfp-ti-202",
       "name": "Valve / Dota 2",
       "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf",
-      "adapter": "valve-dota2",
       "expectedMarkers": [
         "The International 2026 Open Qualifiers",
         "Open qualifier start",

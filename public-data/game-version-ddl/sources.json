@@ -1,0 +1,63 @@
+{
+  "topicId": "game-version-ddl",
+  "generatedAt": "2026-05-24T10:08:21.853Z",
+  "strictLinkCheckReady": false,
+  "sourceFamilies": [
+    {
+      "id": "riot-lol-2026-patch-schedule",
+      "name": "League of Legends Support",
+      "url": "https://support-leagueoflegends.riotgames.com/hc/en-us/articles/360018987893-Patch-Schedule-League-of-Legends",
+      "gameName": "League of Legends",
+      "subtopic": "league-of-legends",
+      "subtopicName": "英雄联盟",
+      "itemPrefix": "game-version-ddl-lol",
+      "tags": [
+        "英雄联盟",
+        "League of Legends",
+        "patch"
+      ],
+      "maxItems": 32,
+      "expectedMarkers": [
+        "Patch Schedule",
+        "26.01",
+        "26.11",
+        "26.24",
+        "Riot Games"
+      ],
+      "relatedItems": [
+        "game-version-ddl-lol-26-01-2026-01-08",
+        "game-version-ddl-lol-26-24-2026-12-09",
+        "game-version-ddl-lol-first-patch-2027-forecast"
+      ],
+      "lastCheckedAt": "2026-05-24T10:08:21.853Z",
+      "coverage": [
+        "League of Legends 2026 patch schedule",
+        "2026 history nodes",
+        "2027 first-patch forecast"
+      ]
+    },
+    {
+      "id": "riot-tft-2026-patch-schedule",
+      "name": "Teamfight Tactics Support",
+      "url": "https://support-teamfighttactics.riotgames.com/hc/en-us/articles/37127675562387-Patch-Schedule-Teamfight-Tactics",
+      "gameName": "Teamfight Tactics",
+      "subtopic": "teamfight-tactics",
+      "subtopicName": "云顶之弈",
+      "itemPrefix": "game-version-ddl-tft",
+      "tags": [
+        "云顶之弈",
+        "Teamfight Tactics",
+        "patch"
+      ],
+      "maxItems": 32,
+      "expectedMarkers": [
+        "Patch Schedule",
+        "TFT17.4",
+        "TFT17.5",
+        "Riot Games"
+      ],
+      "relatedItems": [],
+      "lastCheckedAt": "2026-05-24T10:08:21.853Z"
+    }
+  ]
+}

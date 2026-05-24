@@ -21,9 +21,9 @@
   ·
   <a href="https://just-agent.github.io/just-ddl/#/topic/game-ddl">在 Just-DDL Hub 查看</a>
   ·
-  <a href="data/items.json">下载数据 JSON</a>
+  <a href="public-data/items.json">下载数据 JSON</a>
   ·
-  <a href="data/sources.json">查看来源清单</a>
+  <a href="public-data/sources.json">查看来源清单</a>
 </p>
 
 ## 为什么拆成独立仓库
@@ -49,10 +49,12 @@
 
 | Hub Topic | 数据出口 | 来源策略 |
 | --- | --- | --- |
-| `game-ddl` 电竞赛事 | [`data/items.json`](data/items.json) | 赛事官网、主办方公告和权威赛事页 |
-| `game-version-ddl` 游戏版本 | [`data/game-version-ddl/items.json`](data/game-version-ddl/items.json) | Riot 官方 LoL/TFT patch schedule，后续可扩展到更多官方版本公告 |
+| `game-ddl` 电竞赛事 | [`public-data/items.json`](public-data/items.json) | 赛事官网、主办方公告和权威赛事页 |
+| `game-version-ddl` 游戏版本 | [`public-data/game-version-ddl/items.json`](public-data/game-version-ddl/items.json) | Riot 官方 LoL/TFT patch schedule，后续可扩展到更多官方版本公告 |
 
 Hub 注册 `game-version-ddl` 时会把它当作独立 Topic 展示。这样一个仓库可以维护相近专题，但用户在主题广场里仍能单独收藏“电竞赛事”或“游戏版本”。
+
+`data/` 是维护数据，允许保留 crawler、预测依据和校验字段；`public-data/` 是 Pages、Hub 和小程序消费的公开出口，构建时会剥离内部维护字段。
 
 公开说明：Riot Support 页面在部分自动化环境可能触发访问保护；当前版本按官方 patch schedule 核验后写入 JSON，并保留 crawler 检查链路，页面展示仍以官方来源链接为准。
 
@@ -119,7 +121,7 @@ flowchart LR
 
 ```bash
 npm run crawl
-npm run validate
+npm run build
 npm run link-check
 ```
 
@@ -133,6 +135,12 @@ npm run link-check
 │  ├─ items.json
 │  ├─ sources.json
 │  ├─ crawl-report.json
+│  └─ game-version-ddl/
+│     ├─ items.json
+│     └─ sources.json
+├─ public-data/
+│  ├─ items.json
+│  ├─ sources.json
 │  └─ game-version-ddl/
 │     ├─ items.json
 │     └─ sources.json

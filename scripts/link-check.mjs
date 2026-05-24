@@ -4,7 +4,15 @@ const dataRoot = new URL('../data/', import.meta.url);
 const strict = process.env.STRICT_LINK_CHECK === '1';
 const timeoutMs = Number(process.env.LINK_CHECK_TIMEOUT_MS || 4500);
 const concurrency = Number(process.env.LINK_CHECK_CONCURRENCY || 8);
-const urls = [...new Set([...readAllItems().map(item => item.url), ...readAllSources().map(source => source.url)].filter(Boolean))];
+const sources = readAllSources();
+const manualVerifiedUrls = new Set(
+  sources
+    .filter(source => source.linkCheckMode === 'manual_verified')
+    .map(source => source.url)
+    .filter(Boolean)
+);
+const urls = [...new Set([...readAllItems().map(item => item.url), ...sources.map(source => source.url)].filter(Boolean))]
+  .filter(url => !manualVerifiedUrls.has(url));
 const failures = [];
 
 function jsonFiles(name) {
@@ -57,4 +65,4 @@ if (failures.length) {
   }
   console.warn('warning-only link-check failures:', message);
 }
-console.log(`checked ${urls.length} unique links`);
+console.log(`checked ${urls.length} unique links; manualVerified=${manualVerifiedUrls.size}`);

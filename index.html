@@ -82,7 +82,7 @@ function styleOf(item){return styles[item.subtopic]||styles.other}
 function labelOf(item){return item.topicId==='game-version-ddl'?'游戏版本':'电竞赛事'}
 async function loadJson(path){const res=await fetch(path,{cache:'no-store'});if(!res.ok)return[];const value=await res.json();return Array.isArray(value)?value:[]}
 async function load(){
-  const [events,versions]=await Promise.all([loadJson('data/items.json'),loadJson('data/game-version-ddl/items.json')]);
+  const [events,versions]=await Promise.all([loadJson('public-data/items.json'),loadJson('public-data/game-version-ddl/items.json')]);
   items=[...events.map(item=>({...item,topicId:item.topicId||'game-ddl'})),...versions.map(item=>({...item,topicId:item.topicId||'game-version-ddl'}))].sort((a,b)=>rank(a)-rank(b)||dateValue(a)-dateValue(b));
   if(!topics[selected])selected='all';
   render();
