@@ -1,30 +1,86 @@
 export const PRIVATE_KEYS = new Set([
-  "accessMode", "adapter", "apiUrl", "coverageNote", "crawler", "crawlerReport",
-  "debug", "debugReport", "developerNote", "developerRemark", "devNote",
-  "devRemark", "error", "forecastBasis", "internalNote", "internalRemark",
-  "licenseNote", "linkCheckMode", "maintainerComment", "maintainerNote",
-  "maintainerRemark", "parser", "parserConfidence", "privateNote",
-  "privateRemark", "raw", "rawHtml", "rawPayload", "rawSource",
-  "releaseCadence", "sampleNote", "scopeNote", "sourcePolicy",
-  "sourcePriority", "validationNote"
+  "accessMode",
+  "adapter",
+  "apiUrl",
+  "coverageNote",
+  "crawler",
+  "crawlerReport",
+  "crawledAt",
+  "debug",
+  "debugReport",
+  "deadlineTimezone",
+  "developerNote",
+  "developerComment",
+  "developerRemark",
+  "devNote",
+  "devComment",
+  "devRemark",
+  "debugNote",
+  "debugComment",
+  "debugRemark",
+  "error",
+  "forecastBasis",
+  "internalNote",
+  "internalComment",
+  "internalRemark",
+  "lastChecked",
+  "licenseNote",
+  "linkCheckMode",
+  "maintainerNote",
+  "maintainerComment",
+  "maintainerRemark",
+  "parser",
+  "parserConfidence",
+  "privateNote",
+  "privateComment",
+  "privateRemark",
+  "raw",
+  "rawHtml",
+  "rawPayload",
+  "rawSource",
+  "releaseCadence",
+  "sampleNote",
+  "scopeNote",
+  "sourcePolicy",
+  "sourcePriority",
+  "validationNote"
 ]);
 
 export const PRIVATE_KEY_PATTERNS = [
-  /(?:developer|dev|maintainer|internal|private|debug|crawler|crawl|parser|adapter|license|coverage|sample|scope|linkCheck|validation|review|ops|sync|raw|error)[A-Za-z0-9_]*(?:Note|Notes|Comment|Comments|Memo|Memos|Remark|Remarks|Annotation|Annotations|Report|Reports|Message|Messages)$/i,
+  /^(?:internal|private|debug|crawler|crawl|parser|adapter|raw|error)[A-Za-z0-9_]*$/i,
+  /(?:developer|dev|maintainer|internal|private|debug|crawler|crawl|parser|adapter|license|coverage|sample|scope|linkCheck|validation|raw|error)[A-Za-z0-9_]*(?:Note|Notes|Comment|Comments|Memo|Memos|Remark|Remarks|Annotation|Annotations|Report|Reports|Message|Messages)$/i,
   /^(?:raw|error|stack|trace|exception)$/i,
-  /(?:开发者|开发|内部|维护者?|调试|私有|私人|爬虫|解析器|原始|错误).{0,12}(?:备注|说明|注释|留言|消息|报告)$/i
+  /(?:开发者|开发人员|开发|内部|内测|维护者?|维护人|运营|调试|私有|私人|爬虫|解析器|原始|错误).{0,16}(?:备注|说明|注释|留言|消息|报告|记录)$/i
 ];
 
 export const FORBIDDEN_TEXT_PATTERNS = [
-  /curated coverage seed/i, /official-style seed/i, /crawler seed/i, /coverage seed/i,
-  /developer note/i, /developer remark/i, /maintainer note/i, /maintainer remark/i,
-  /internal note/i, /internal remark/i, /private note/i, /private remark/i,
-  /debug note/i, /debug remark/i, /forecastBasis/, /releaseCadence/,
-  /scopeNote/, /accessMode/, /apiUrl/, /linkCheckMode/, /parser/,
-  /not for public/i, /do not publish/i, /开发者[的把]?备注/, /开发者.{0,8}备注/,
-  /开发备注/, /内部[的把]?备注/, /内部.{0,8}备注/, /维护(?:者)?[的把]?备注/,
-  /维护(?:者)?.{0,8}备注/, /调试[的把]?备注/, /调试.{0,8}备注/,
-  /私有[的把]?备注/, /私有.{0,8}备注/, /私人[的把]?备注/, /私人.{0,8}备注/,
+  /\b(?:developerNote|developerComment|developerRemark|devNote|devComment|devRemark|debugNote|debugComment|debugRemark|internalNote|internalComment|internalRemark|privateNote|privateComment|privateRemark|maintainerNote|maintainerComment|maintainerRemark|forecastBasis|releaseCadence|accessMode|apiUrl|licenseNote|scopeNote|linkCheckMode|parserConfidence|sourcePolicy|sourcePriority|validationNote|crawlerReport|debugReport|rawHtml|rawPayload|rawSource)\b/,
+  /developer note/i,
+  /developer remark/i,
+  /maintainer note/i,
+  /maintainer remark/i,
+  /internal note/i,
+  /internal remark/i,
+  /private note/i,
+  /private remark/i,
+  /debug note/i,
+  /debug remark/i,
+  /not for public/i,
+  /do not publish/i,
+  /开发者[的把]?备注/,
+  /开发者.{0,16}(?:备注|注释|留言|消息|报告|记录)/,
+  /开发人员.{0,16}(?:备注|注释|留言|消息|报告|记录)/,
+  /开发备注/,
+  /内部[的把]?备注/,
+  /内部.{0,16}(?:备注|注释|留言|消息|报告|记录)/,
+  /维护(?:者)?[的把]?备注/,
+  /维护(?:者|人)?.{0,16}(?:备注|注释|留言|消息|报告|记录)/,
+  /调试[的把]?备注/,
+  /调试.{0,16}(?:备注|注释|留言|消息|报告|记录)/,
+  /私有[的把]?备注/,
+  /私有.{0,16}(?:备注|注释|留言|消息|报告|记录)/,
+  /私人[的把]?备注/,
+  /私人.{0,16}(?:备注|注释|留言|消息|报告|记录)/,
   /\b(?:TODO|FIXME|HACK|XXX):/i
 ];
 
@@ -45,17 +101,25 @@ export function stripPrivateFields(value) {
   if (!value || typeof value !== "object") return value;
 
   const result = {};
-  if ("accessMode" in value) result.sourceLabel = publicSourceLabel(value.accessMode);
+  if ("accessMode" in value) {
+    result.sourceLabel = publicSourceLabel(value.accessMode);
+  }
+
   for (const [key, nested] of Object.entries(value)) {
-    if (!isPrivateKey(key)) result[key] = stripPrivateFields(nested);
+    if (isPrivateKey(key)) continue;
+    result[key] = stripPrivateFields(nested);
   }
   return result;
 }
 
 export function scanPublicPayload(value, label = "payload") {
   const errors = [];
+
   function visit(node, path) {
-    if (Array.isArray(node)) return node.forEach((entry, index) => visit(entry, `${path}[${index}]`));
+    if (Array.isArray(node)) {
+      node.forEach((entry, index) => visit(entry, `${path}[${index}]`));
+      return;
+    }
     if (!node || typeof node !== "object") {
       if (typeof node === "string") {
         for (const pattern of FORBIDDEN_TEXT_PATTERNS) {
@@ -69,6 +133,8 @@ export function scanPublicPayload(value, label = "payload") {
       visit(nested, `${path}.${key}`);
     }
   }
+
   visit(value, label);
   return errors;
 }
+
