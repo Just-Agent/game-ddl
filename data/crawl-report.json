@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T06:32:16.888Z",
+  "generatedAt": "2026-06-02T07:09:55.662Z",
   "checks": [
     {
       "id": "blast-pgl-event-listing-blast-tv-cs-tournaments-pgl-singapore-major-2026",
@@ -20,7 +20,7 @@
         "Major"
       ],
       "relatedItemCount": 1,
-      "checkedAt": "2026-05-26T06:32:15.850Z"
+      "checkedAt": "2026-06-02T07:09:54.717Z"
     },
     {
       "id": "esl-pro-tour-pro-eslgaming-com-tour-csgo-cologne",
@@ -41,7 +41,7 @@
         "Major"
       ],
       "relatedItemCount": 1,
-      "checkedAt": "2026-05-26T06:32:16.240Z"
+      "checkedAt": "2026-06-02T07:09:55.205Z"
     },
     {
       "id": "esports-nations-cup-esportsnationscup-com-en-press-releases-enc-adds-hon",
@@ -61,35 +61,48 @@
         "Event start"
       ],
       "relatedItemCount": 3,
-      "checkedAt": "2026-05-26T06:32:15.380Z"
+      "checkedAt": "2026-06-02T07:09:53.899Z"
     },
     {
       "id": "esports-world-cup-esportsworldcup-com-en-news-ewc26-confirms-the-return-",
       "name": "Esports World Cup",
       "url": "https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games",
       "adapter": "esports-world-cup",
-      "ok": false,
-      "status": 403,
-      "finalUrl": "https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games",
-      "contentType": "text/html",
-      "title": "ERROR: The request could not be satisfied",
-      "matchedMarkers": [],
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://esportsworldcup.com/en/press-releases/ewc26-confirms-the-return-of-20-games",
+      "contentType": "text/html; charset=utf-8",
+      "title": "Esports World Cup 2026 Confirms the Return of 20 Games",
+      "matchedMarkers": [
+        "Esports World Cup",
+        "2026",
+        "Esports World Cup 2026",
+        "EWC",
+        "Honor of Kings"
+      ],
       "relatedItemCount": 3,
-      "checkedAt": "2026-05-26T06:32:15.246Z"
+      "checkedAt": "2026-06-02T07:09:54.554Z"
     },
     {
       "id": "esports-world-cup-www-esportsworldcup-com-en-news-cs2-locked-in-for-ewc-",
       "name": "Esports World Cup",
       "url": "https://www.esportsworldcup.com/en/news/cs2-locked-in-for-ewc-2026-2027",
       "adapter": "esports-world-cup",
-      "ok": false,
-      "status": 403,
+      "ok": true,
+      "status": 200,
       "finalUrl": "https://www.esportsworldcup.com/en/news/cs2-locked-in-for-ewc-2026-2027",
-      "contentType": "text/html",
-      "title": "ERROR: The request could not be satisfied",
-      "matchedMarkers": [],
+      "contentType": "text/html; charset=utf-8",
+      "title": "Counter-Strike 2 Locked In for EWC 26 and 27",
+      "matchedMarkers": [
+        "Esports World Cup",
+        "2026",
+        "Event start",
+        "CS2",
+        "EWC",
+        "Counter-Strike 2"
+      ],
       "relatedItemCount": 1,
-      "checkedAt": "2026-05-26T06:32:15.479Z"
+      "checkedAt": "2026-06-02T07:09:53.892Z"
     },
     {
       "id": "lol-esports-lolesports-com-en-us-news-lcs-spring-finals-heads-to-asu-at-",
@@ -108,7 +121,7 @@
         "LCS"
       ],
       "relatedItemCount": 1,
-      "checkedAt": "2026-05-26T06:32:15.866Z"
+      "checkedAt": "2026-06-02T07:09:53.990Z"
     },
     {
       "id": "lol-esports-lolesports-com-en-us-news-msi-and-worlds-updates",
@@ -128,7 +141,7 @@
         "Grand Final"
       ],
       "relatedItemCount": 3,
-      "checkedAt": "2026-05-26T06:32:16.725Z"
+      "checkedAt": "2026-06-02T07:09:55.634Z"
     },
     {
       "id": "thespike-gg-event-listing-www-thespike-gg-events-valorant-champions-tour",
@@ -149,7 +162,7 @@
         "Masters"
       ],
       "relatedItemCount": 1,
-      "checkedAt": "2026-05-26T06:32:16.888Z"
+      "checkedAt": "2026-06-02T07:09:55.662Z"
     },
     {
       "id": "valve-dota-2-cdn-cloudflare-steamstatic-com-apps-dota2-assets-rfp-ti-202",
@@ -163,7 +176,7 @@
       "title": "",
       "matchedMarkers": [],
       "relatedItemCount": 2,
-      "checkedAt": "2026-05-26T06:32:16.617Z"
+      "checkedAt": "2026-06-02T07:09:55.309Z"
     }
   ]
 }
