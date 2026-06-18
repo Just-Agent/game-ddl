@@ -15,15 +15,15 @@
   <rect x="64" y="64" width="1072" height="56" rx="16" fill="#0f172a"/>
   <circle cx="94" cy="92" r="8" fill="#E11D48"/>
   <text x="114" y="99" font-family="Inter, Microsoft YaHei, sans-serif" font-size="18" font-weight="900" fill="#ffffff">JUST-DDL NETWORK</text>
-  <text x="64" y="166" font-family="Inter, Microsoft YaHei, sans-serif" font-size="44" font-weight="900" fill="#0f172a">电竞赛事 DDL</text>
-  <text x="64" y="204" font-family="Inter, Microsoft YaHei, sans-serif" font-size="19" fill="#475569">英雄联盟、王者荣耀、VALORANT、CS2、Dota 2 和电竞世界杯的赛事节点追踪。</text>
+  <text x="64" y="166" font-family="Inter, Microsoft YaHei, sans-serif" font-size="42" font-weight="900" fill="#0f172a">电竞赛事、游戏版本与 Steam 新游 DDL</text>
+  <text x="64" y="204" font-family="Inter, Microsoft YaHei, sans-serif" font-size="19" fill="#475569">电竞赛事、Riot patch schedule 与 Steam 官方预发布新游追踪。</text>
   <rect x="760" y="150" width="330" height="110" rx="22" fill="url(#hero)" opacity="0.96"/>
-  <text x="790" y="196" font-family="Inter, Microsoft YaHei, sans-serif" font-size="42" font-weight="900" fill="#ffffff">16</text>
+  <text x="790" y="196" font-family="Inter, Microsoft YaHei, sans-serif" font-size="42" font-weight="900" fill="#ffffff">134</text>
   <text x="790" y="232" font-family="Inter, Microsoft YaHei, sans-serif" font-size="18" font-weight="800" fill="#ffffff" opacity="0.86">active DDL items</text>
   <rect x="760" y="284" width="330" height="110" rx="22" fill="#f8fafc" stroke="#dbe3ef"/>
-  <text x="790" y="330" font-family="Inter, Microsoft YaHei, sans-serif" font-size="42" font-weight="900" fill="#0f172a">9</text>
+  <text x="790" y="330" font-family="Inter, Microsoft YaHei, sans-serif" font-size="42" font-weight="900" fill="#0f172a">13</text>
   <text x="790" y="366" font-family="Inter, Microsoft YaHei, sans-serif" font-size="18" font-weight="800" fill="#64748b">official source families</text>
-  <text x="64" y="244" font-family="Inter, Microsoft YaHei, sans-serif" font-size="18" font-weight="900" fill="#E11D48">Subtopic matrix</text>
+  <text x="64" y="244" font-family="Inter, Microsoft YaHei, sans-serif" font-size="18" font-weight="900" fill="#E11D48">Topic family matrix</text>
   
       <g>
         <rect x="64" y="152" width="500" height="34" rx="10" fill="#FEF3C7" opacity="0.92"/>
@@ -66,6 +66,20 @@
         <text x="104" y="424" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="800" fill="#0f172a">综合电竞</text>
         <rect x="250" y="410" width="66" height="18" rx="9" fill="#7C3AED" opacity="0.9"/>
         <text x="600" y="424" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" font-weight="800" fill="#475569">1 条</text>
+      </g>
+      <g>
+        <rect x="64" y="452" width="500" height="34" rx="10" fill="#E0F2FE" opacity="0.92"/>
+        <circle cx="84" cy="469" r="7" fill="#0EA5E9"/>
+        <text x="104" y="474" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="800" fill="#0f172a">游戏版本</text>
+        <rect x="250" y="460" width="330" height="18" rx="9" fill="#0EA5E9" opacity="0.9"/>
+        <text x="600" y="474" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" font-weight="800" fill="#475569">30 条</text>
+      </g>
+      <g>
+        <rect x="64" y="502" width="500" height="34" rx="10" fill="#DCFCE7" opacity="0.92"/>
+        <circle cx="84" cy="519" r="7" fill="#16A34A"/>
+        <text x="104" y="524" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="800" fill="#0f172a">Steam 新游</text>
+        <rect x="250" y="510" width="330" height="18" rx="9" fill="#16A34A" opacity="0.9"/>
+        <text x="600" y="524" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" font-weight="800" fill="#475569">88 条</text>
       </g>
   <rect x="760" y="418" width="330" height="86" rx="22" fill="#ecfeff" stroke="#ccfbf1"/>
   <text x="790" y="454" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="900" fill="#0f766e">crawler · validator · link-check</text>

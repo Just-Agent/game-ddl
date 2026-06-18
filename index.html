@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>电竞赛事与游戏版本 DDL · Just-DDL Network</title>
-<meta name="description" content="电竞赛事、游戏版本更新、官方 patch schedule、历史版本节点和预测窗口追踪。">
+<title>电竞赛事、游戏版本与 Steam 新游 DDL · Just-DDL Network</title>
+<meta name="description" content="电竞赛事、游戏版本更新、Steam 预发布新游、官方 patch schedule、历史版本节点和预测窗口追踪。">
 <style>
 :root{--accent:#e11d48;--accent2:#0ea5e9;--ink:#071225;--muted:#5d6b85;--line:#dbe5f2;--soft:#f8fafc;--paper:#fff}
 *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff7fb 0%,#f8fbff 48%,#ecfeff 100%);letter-spacing:0}button,input{font:inherit}
@@ -22,8 +22,8 @@ header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);back
   <section class="hero">
     <div>
       <div class="eyebrow">Game DDL</div>
-      <h1>电竞赛事与游戏版本</h1>
-      <p class="lead">电竞赛事、游戏版本更新和官方 patch schedule 追踪。官方日期进入倒计时，已发布版本进入历史时间线，未官宣下一年度版本只显示预测窗口。</p>
+      <h1>电竞赛事、游戏版本与 Steam 新游</h1>
+      <p class="lead">电竞赛事、游戏版本更新、Steam 预发布新游和官方 patch schedule 追踪。官方精确日期进入倒计时，模糊发布日期只显示待官方公告。</p>
       <div class="stats">
         <div class="stat"><strong id="itemCount">-</strong><span>节点</span></div>
         <div class="stat"><strong id="sourceCount">-</strong><span>来源</span></div>
@@ -39,7 +39,7 @@ header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);back
   <div class="toolbar">
     <div>
       <h2>全部节点</h2>
-      <div class="desc">赛事、版本倒计时、历史版本和预测窗口分开展示，预测不等于官方日期</div>
+      <div class="desc">赛事、版本倒计时、Steam 预发布、历史版本和预测窗口分开展示，预测不等于官方日期</div>
     </div>
     <div class="toolbar-actions">
       <span class="pill" id="filterLabel">全部项目</span>
@@ -55,11 +55,13 @@ header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);back
 <footer>Game DDL is part of Just-DDL Network. <strong>微信小程序版本即将上线，敬请期待</strong><div>数据仅供参考，请以官方信息为准。</div></footer>
 <script>
 const topics={
-  all:{name:'全部',tone:'#e11d48',desc:'电竞赛事和游戏版本节点'},
+  all:{name:'全部',tone:'#e11d48',desc:'电竞赛事、游戏版本和 Steam 新游节点'},
   'game-ddl':{name:'电竞赛事',tone:'#e11d48',desc:'LoL、王者荣耀、VALORANT、CS2、Dota 2 与 EWC'},
-  'game-version-ddl':{name:'游戏版本',tone:'#0ea5e9',desc:'LoL / TFT 官方 patch schedule、历史版本和预测窗口'}
+  'game-version-ddl':{name:'游戏版本',tone:'#0ea5e9',desc:'LoL / TFT 官方 patch schedule、历史版本和预测窗口'},
+  'steamgame-ddl':{name:'Steam 新游',tone:'#16a34a',desc:'Steam Coming Soon 与 Popular Upcoming 预发布游戏'}
 };
 const styles={
+  steam:{name:'Steam',icon:'STM',tone:'#16a34a'},
   'league-of-legends':{name:'英雄联盟',icon:'LOL',tone:'#2563eb'},
   'teamfight-tactics':{name:'云顶之弈',icon:'TFT',tone:'#0ea5e9'},
   'honor-of-kings':{name:'王者荣耀',icon:'HOK',tone:'#dc2626'},
@@ -79,11 +81,11 @@ function fmtDate(value){if(!value)return'待官方公告';return new Date(value)
 function fmtWindow(item){return item.estimatedNextWindow?`${fmtDate(item.estimatedNextWindow.start)} - ${fmtDate(item.estimatedNextWindow.end)}`:item.dateRange}
 function domain(url){try{return new URL(url).hostname.replace(/^www\./,'')}catch{return'official source'}}
 function styleOf(item){return styles[item.subtopic]||styles.other}
-function labelOf(item){return item.topicId==='game-version-ddl'?'游戏版本':'电竞赛事'}
+function labelOf(item){if(item.topicId==='steamgame-ddl')return'Steam 新游';return item.topicId==='game-version-ddl'?'游戏版本':'电竞赛事'}
 async function loadJson(path){const res=await fetch(path,{cache:'no-store'});if(!res.ok)return[];const value=await res.json();return Array.isArray(value)?value:[]}
 async function load(){
-  const [events,versions]=await Promise.all([loadJson('public-data/items.json'),loadJson('public-data/game-version-ddl/items.json')]);
-  items=[...events.map(item=>({...item,topicId:item.topicId||'game-ddl'})),...versions.map(item=>({...item,topicId:item.topicId||'game-version-ddl'}))].sort((a,b)=>rank(a)-rank(b)||dateValue(a)-dateValue(b));
+  const [events,versions,steamGames]=await Promise.all([loadJson('public-data/items.json'),loadJson('public-data/game-version-ddl/items.json'),loadJson('public-data/steamgame-ddl/items.json')]);
+  items=[...events.map(item=>({...item,topicId:item.topicId||'game-ddl'})),...versions.map(item=>({...item,topicId:item.topicId||'game-version-ddl'})),...steamGames.map(item=>({...item,topicId:item.topicId||'steamgame-ddl'}))].sort((a,b)=>rank(a)-rank(b)||dateValue(a)-dateValue(b));
   if(!topics[selected])selected='all';
   render();
 }
@@ -120,7 +122,7 @@ function timePanel(item,cd){
 function renderEvents(list){
   const el=document.getElementById('events');
   el.className=`events ${viewMode}`;
-  if(!list.length){el.innerHTML='<div class="empty">没有匹配的游戏 DDL，换个关键词或专题试试。</div>';return}
+  if(!list.length){el.innerHTML=`<div class="empty">${selected==='steamgame-ddl'?'Steam 新游数据等待下一次官方列表刷新。':'没有匹配的游戏 DDL，换个关键词或专题试试。'}</div>`;return}
   el.innerHTML=list.map(item=>{
     const style=styleOf(item),cd=parts(item),tags=(item.tags||[]).map(tag=>`<span class="tag">${tag}</span>`).join('');
     return`<article class="event" style="--tone:${style.tone}">

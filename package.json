@@ -6,10 +6,11 @@
   "scripts": {
     "crawl": "node scripts/crawl-sources.mjs",
     "forecast:audit": "node scripts/audit-forecasts.mjs",
+    "test:steam": "node scripts/test-steam-source-utils.mjs",
     "validate": "node scripts/validate-data.mjs",
     "export:public": "node scripts/export-public-data.mjs",
     "validate:public": "node scripts/validate-public-data.mjs",
-    "build": "npm run forecast:audit && npm run validate && npm run export:public && npm run validate:public",
+    "build": "npm run test:steam && npm run forecast:audit && npm run validate && npm run export:public && npm run validate:public",
     "link-check": "node scripts/link-check.mjs"
   }
 }

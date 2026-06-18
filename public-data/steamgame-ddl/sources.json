@@ -1,0 +1,30 @@
+{
+  "topicId": "steamgame-ddl",
+  "sourceFamilies": [
+    {
+      "id": "steam-coming-soon",
+      "name": "Steam Coming Soon",
+      "url": "https://store.steampowered.com/search/?filter=comingsoon",
+      "rail": "date-first",
+      "maxItems": 50,
+      "expectedMarkers": [
+        "Steam",
+        "Coming Soon"
+      ],
+      "lastCheckedAt": "2026-06-18T13:09:18.916Z"
+    },
+    {
+      "id": "steam-popular-upcoming",
+      "name": "Steam Popular Upcoming",
+      "url": "https://store.steampowered.com/search/?filter=popularcomingsoon",
+      "rail": "popular-upcoming",
+      "maxItems": 50,
+      "expectedMarkers": [
+        "Steam",
+        "Popular Upcoming"
+      ],
+      "lastCheckedAt": "2026-06-18T13:09:18.916Z"
+    }
+  ],
+  "generatedAt": "2026-06-18T13:09:18.916Z"
+}

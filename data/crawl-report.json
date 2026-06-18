@@ -1,8 +1,9 @@
 {
-  "generatedAt": "2026-05-24T10:08:21.853Z",
+  "generatedAt": "2026-06-18T13:09:18.917Z",
   "dataSets": [
     "game-ddl",
-    "game-version-ddl"
+    "game-version-ddl",
+    "steamgame-ddl"
   ],
   "checks": [
     {
@@ -26,7 +27,7 @@
       ],
       "relatedItemCount": 1,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-24T10:08:15.923Z"
+      "checkedAt": "2026-06-18T13:09:06.632Z"
     },
     {
       "topicId": "game-ddl",
@@ -49,7 +50,7 @@
       ],
       "relatedItemCount": 1,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-24T10:08:18.102Z"
+      "checkedAt": "2026-06-18T13:09:08.407Z"
     },
     {
       "topicId": "game-ddl",
@@ -71,7 +72,7 @@
       ],
       "relatedItemCount": 3,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-24T10:08:15.823Z"
+      "checkedAt": "2026-06-18T13:09:05.580Z"
     },
     {
       "topicId": "game-ddl",
@@ -79,10 +80,21 @@
       "name": "Esports World Cup",
       "url": "https://esportsworldcup.com/en/news/ewc26-confirms-the-return-of-20-games",
       "adapter": "esports-world-cup",
-      "ok": false,
-      "status": "error",
-      "error": "This operation was aborted",
-      "checkedAt": "2026-05-24T10:08:19.402Z"
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://esportsworldcup.com/en/press-releases/ewc26-confirms-the-return-of-20-games",
+      "contentType": "text/html; charset=utf-8",
+      "title": "Esports World Cup 2026 Confirms the Return of 20 Games",
+      "matchedMarkers": [
+        "Esports World Cup",
+        "2026",
+        "Esports World Cup 2026",
+        "EWC",
+        "Honor of Kings"
+      ],
+      "relatedItemCount": 3,
+      "generatedItemCount": 0,
+      "checkedAt": "2026-06-18T13:09:06.324Z"
     },
     {
       "topicId": "game-ddl",
@@ -105,7 +117,7 @@
       ],
       "relatedItemCount": 1,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-24T10:08:15.647Z"
+      "checkedAt": "2026-06-18T13:09:05.977Z"
     },
     {
       "topicId": "game-ddl",
@@ -126,7 +138,7 @@
       ],
       "relatedItemCount": 1,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-24T10:08:16.332Z"
+      "checkedAt": "2026-06-18T13:09:06.197Z"
     },
     {
       "topicId": "game-ddl",
@@ -148,7 +160,7 @@
       ],
       "relatedItemCount": 3,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-24T10:08:20.357Z"
+      "checkedAt": "2026-06-18T13:09:08.943Z"
     },
     {
       "topicId": "game-ddl",
@@ -171,7 +183,7 @@
       ],
       "relatedItemCount": 1,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-24T10:08:21.039Z"
+      "checkedAt": "2026-06-18T13:09:09.804Z"
     },
     {
       "topicId": "game-ddl",
@@ -179,15 +191,10 @@
       "name": "Valve / Dota 2",
       "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf",
       "adapter": "valve-dota2",
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://cdn.cloudflare.steamstatic.com/apps/dota2/assets/RFP_TI_2026.pdf",
-      "contentType": "application/pdf",
-      "title": "",
-      "matchedMarkers": [],
-      "relatedItemCount": 2,
-      "generatedItemCount": 0,
-      "checkedAt": "2026-05-24T10:08:20.160Z"
+      "ok": false,
+      "status": "error",
+      "error": "This operation was aborted",
+      "checkedAt": "2026-06-18T13:09:12.912Z"
     },
     {
       "topicId": "game-version-ddl",
@@ -195,15 +202,17 @@
       "name": "League of Legends Support",
       "url": "https://support-leagueoflegends.riotgames.com/hc/en-us/articles/360018987893-Patch-Schedule-League-of-Legends",
       "adapter": "riot-lol-patch-schedule",
-      "ok": false,
-      "status": 403,
-      "finalUrl": "https://support-leagueoflegends.riotgames.com/hc/en-us/articles/360018987893-Patch-Schedule-League-of-Legends",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://support.riotgames.com/en-us/league-of-legends/gameplay/patch-schedule-league-of-legends",
       "contentType": "text/html; charset=UTF-8",
-      "title": "Just a moment...",
-      "matchedMarkers": [],
+      "title": "Riot Games Support",
+      "matchedMarkers": [
+        "Riot Games"
+      ],
       "relatedItemCount": 3,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-24T10:08:21.654Z"
+      "checkedAt": "2026-06-18T13:09:14.361Z"
     },
     {
       "topicId": "game-version-ddl",
@@ -213,19 +222,37 @@
       "adapter": "riot-tft-patch-schedule",
       "ok": true,
       "status": 200,
-      "finalUrl": "https://support-teamfighttactics.riotgames.com/hc/en-us/articles/37127675562387-Patch-Schedule-Teamfight-Tactics",
-      "contentType": "text/html; charset=utf-8",
-      "title": "Patch Schedule - Teamfight Tactics &ndash; Teamfight Tactics Support",
+      "finalUrl": "https://support.riotgames.com/en-us/tft/events/patch-schedule-teamfight-tactics",
+      "contentType": "text/html; charset=UTF-8",
+      "title": "Riot Games Support",
       "matchedMarkers": [
-        "Teamfight Tactics",
-        "Patch Schedule",
-        "TFT17.4",
-        "TFT17.5",
         "Riot Games"
       ],
       "relatedItemCount": 0,
       "generatedItemCount": 0,
-      "checkedAt": "2026-05-24T10:08:21.853Z"
+      "checkedAt": "2026-06-18T13:09:14.415Z"
+    },
+    {
+      "topicId": "steamgame-ddl",
+      "id": "steam-coming-soon",
+      "name": "Steam Coming Soon",
+      "url": "https://store.steampowered.com/search/?filter=comingsoon",
+      "adapter": "steam-search",
+      "ok": false,
+      "status": "error",
+      "error": "This operation was aborted",
+      "checkedAt": "2026-06-18T13:09:18.916Z"
+    },
+    {
+      "topicId": "steamgame-ddl",
+      "id": "steam-popular-upcoming",
+      "name": "Steam Popular Upcoming",
+      "url": "https://store.steampowered.com/search/?filter=popularcomingsoon",
+      "adapter": "steam-search",
+      "ok": false,
+      "status": "error",
+      "error": "This operation was aborted",
+      "checkedAt": "2026-06-18T13:09:18.916Z"
     }
   ]
 }

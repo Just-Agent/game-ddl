@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { buildSteamItems, parseSteamSearchPayload } from './steam-source-utils.mjs';
 
 const dataRoot = new URL('../data/', import.meta.url);
 const reportPath = new URL('../data/crawl-report.json', import.meta.url);
@@ -24,6 +25,7 @@ const adapterHints = {
   'event-listing': ['Event', '2026'],
   'riot-lol-patch-schedule': ['League of Legends', 'Patch Schedule', '26.11'],
   'riot-tft-patch-schedule': ['Teamfight Tactics', 'Patch Schedule', 'TFT17.4'],
+  'steam-search': ['Steam', 'app', 'Coming Soon'],
 };
 
 const monthMap = new Map([
@@ -76,10 +78,13 @@ async function fetchSource(source) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    const response = await fetch(source.url, {
+    const response = await fetch(source.crawlUrl || source.url, {
       redirect: 'follow',
       signal: controller.signal,
-      headers: { 'user-agent': 'Just-DDL game-ddl crawler (+https://github.com/Just-Agent/game-ddl)' },
+      headers: {
+        'accept-language': 'en-US,en;q=0.9',
+        'user-agent': 'Mozilla/5.0 Just-DDL game-ddl crawler (+https://github.com/Just-Agent/game-ddl)',
+      },
     });
     const contentType = response.headers.get('content-type') || '';
     const text = contentType.includes('pdf') ? '' : await response.text().catch(() => '');
@@ -176,6 +181,9 @@ async function checkSource(source, topicItems) {
     const generatedItems = ['riot-lol-patch-schedule', 'riot-tft-patch-schedule'].includes(source.adapter)
       ? parseRiotPatchSchedule(source, text)
       : [];
+    const generatedSteamRows = source.adapter === 'steam-search'
+      ? parseSteamSearchPayload(text, source).slice(0, source.maxItems || 50)
+      : [];
     return {
       id: source.id,
       name: source.name,
@@ -188,8 +196,9 @@ async function checkSource(source, topicItems) {
       title,
       matchedMarkers,
       relatedItemCount: relatedItems.length,
-      generatedItemCount: generatedItems.length,
+      generatedItemCount: generatedItems.length + generatedSteamRows.length,
       generatedItems,
+      generatedSteamRows,
       checkedAt: new Date().toISOString(),
     };
   } catch (error) {
@@ -214,11 +223,15 @@ for (const dataSet of dataSets) {
   for (let index = 0; index < sourceFamilies.length; index += concurrency) {
     sourceChecks.push(...await Promise.all(sourceFamilies.slice(index, index + concurrency).map(source => checkSource(source, dataSet.items))));
   }
-  const generatedItems = sourceChecks.flatMap(check => check.generatedItems || []);
+  const generatedSteamRows = sourceChecks.flatMap(check => check.generatedSteamRows || []);
+  const generatedItems = [
+    ...sourceChecks.flatMap(check => check.generatedItems || []),
+    ...(generatedSteamRows.length ? buildSteamItems(generatedSteamRows) : []),
+  ];
   if (generatedItems.length) {
     const generatedSourceNames = new Set(
       sourceChecks
-        .filter(check => (check.generatedItems || []).length)
+        .filter(check => (check.generatedItems || []).length || (check.generatedSteamRows || []).length)
         .map(check => check.name)
     );
     const preservedItems = dataSet.items.filter(item => {
@@ -230,7 +243,7 @@ for (const dataSet of dataSets) {
   dataSet.sources.generatedAt = new Date().toISOString();
   dataSet.sources.sourceFamilies = sourceFamilies.map(source => ({ ...source, lastCheckedAt: dataSet.sources.generatedAt }));
   fs.writeFileSync(dataSet.sourcesPath, JSON.stringify(dataSet.sources, null, 2) + '\n', 'utf8');
-  checks.push(...sourceChecks.map(({ generatedItems: _generatedItems, ...check }) => ({ topicId: dataSet.topicId, ...check })));
+  checks.push(...sourceChecks.map(({ generatedItems: _generatedItems, generatedSteamRows: _generatedSteamRows, ...check }) => ({ topicId: dataSet.topicId, ...check })));
 }
 fs.writeFileSync(reportPath, JSON.stringify({ generatedAt: new Date().toISOString(), dataSets: dataSets.map(set => set.topicId), checks }, null, 2) + '\n', 'utf8');
 console.log('game-ddl crawler checked ' + checks.length + ' source adapters across ' + dataSets.length + ' data exports');
