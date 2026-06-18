@@ -1,87 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Game DDL topic family map</title>
+  <desc id="desc">A clean overview of the game-ddl topic family: esports events, game versions, and Steam upcoming releases.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f8fafc"/>
-      <stop offset="55%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.16"/>
-    </linearGradient>
-    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#E11D48"/>
-      <stop offset="100%" stop-color="#7C3AED"/>
-    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#0F172A" flood-opacity="0.12"/>
+    </filter>
   </defs>
-  <rect width="1200" height="620" rx="32" fill="url(#bg)"/>
-  <rect x="36" y="36" width="1128" height="548" rx="28" fill="#ffffff" stroke="#dbe3ef"/>
-  <rect x="64" y="64" width="1072" height="56" rx="16" fill="#0f172a"/>
-  <circle cx="94" cy="92" r="8" fill="#E11D48"/>
-  <text x="114" y="99" font-family="Inter, Microsoft YaHei, sans-serif" font-size="18" font-weight="900" fill="#ffffff">JUST-DDL NETWORK</text>
-  <text x="64" y="166" font-family="Inter, Microsoft YaHei, sans-serif" font-size="42" font-weight="900" fill="#0f172a">电竞赛事、游戏版本与 Steam 新游 DDL</text>
-  <text x="64" y="204" font-family="Inter, Microsoft YaHei, sans-serif" font-size="19" fill="#475569">电竞赛事、Riot patch schedule 与 Steam 官方预发布新游追踪。</text>
-  <rect x="760" y="150" width="330" height="110" rx="22" fill="url(#hero)" opacity="0.96"/>
-  <text x="790" y="196" font-family="Inter, Microsoft YaHei, sans-serif" font-size="42" font-weight="900" fill="#ffffff">134</text>
-  <text x="790" y="232" font-family="Inter, Microsoft YaHei, sans-serif" font-size="18" font-weight="800" fill="#ffffff" opacity="0.86">active DDL items</text>
-  <rect x="760" y="284" width="330" height="110" rx="22" fill="#f8fafc" stroke="#dbe3ef"/>
-  <text x="790" y="330" font-family="Inter, Microsoft YaHei, sans-serif" font-size="42" font-weight="900" fill="#0f172a">13</text>
-  <text x="790" y="366" font-family="Inter, Microsoft YaHei, sans-serif" font-size="18" font-weight="800" fill="#64748b">official source families</text>
-  <text x="64" y="244" font-family="Inter, Microsoft YaHei, sans-serif" font-size="18" font-weight="900" fill="#E11D48">Topic family matrix</text>
-  
-      <g>
-        <rect x="64" y="152" width="500" height="34" rx="10" fill="#FEF3C7" opacity="0.92"/>
-        <circle cx="84" cy="169" r="7" fill="#D97706"/>
-        <text x="104" y="174" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="800" fill="#0f172a">CS2</text>
-        <rect x="250" y="160" width="198" height="18" rx="9" fill="#D97706" opacity="0.9"/>
-        <text x="600" y="174" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" font-weight="800" fill="#475569">3 条</text>
-      </g>
-      <g>
-        <rect x="64" y="202" width="500" height="34" rx="10" fill="#FFE4E6" opacity="0.92"/>
-        <circle cx="84" cy="219" r="7" fill="#E11D48"/>
-        <text x="104" y="224" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="800" fill="#0f172a">VALORANT</text>
-        <rect x="250" y="210" width="66" height="18" rx="9" fill="#E11D48" opacity="0.9"/>
-        <text x="600" y="224" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" font-weight="800" fill="#475569">1 条</text>
-      </g>
-      <g>
-        <rect x="64" y="252" width="500" height="34" rx="10" fill="#FEE2E2" opacity="0.92"/>
-        <circle cx="84" cy="269" r="7" fill="#DC2626"/>
-        <text x="104" y="274" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="800" fill="#0f172a">王者荣耀</text>
-        <rect x="250" y="260" width="264" height="18" rx="9" fill="#DC2626" opacity="0.9"/>
-        <text x="600" y="274" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" font-weight="800" fill="#475569">4 条</text>
-      </g>
-      <g>
-        <rect x="64" y="302" width="500" height="34" rx="10" fill="#FFEDD5" opacity="0.92"/>
-        <circle cx="84" cy="319" r="7" fill="#7C2D12"/>
-        <text x="104" y="324" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="800" fill="#0f172a">Dota 2</text>
-        <rect x="250" y="310" width="132" height="18" rx="9" fill="#7C2D12" opacity="0.9"/>
-        <text x="600" y="324" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" font-weight="800" fill="#475569">2 条</text>
-      </g>
-      <g>
-        <rect x="64" y="352" width="500" height="34" rx="10" fill="#DBEAFE" opacity="0.92"/>
-        <circle cx="84" cy="369" r="7" fill="#2563EB"/>
-        <text x="104" y="374" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="800" fill="#0f172a">英雄联盟</text>
-        <rect x="250" y="360" width="330" height="18" rx="9" fill="#2563EB" opacity="0.9"/>
-        <text x="600" y="374" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" font-weight="800" fill="#475569">5 条</text>
-      </g>
-      <g>
-        <rect x="64" y="402" width="500" height="34" rx="10" fill="#F3E8FF" opacity="0.92"/>
-        <circle cx="84" cy="419" r="7" fill="#7C3AED"/>
-        <text x="104" y="424" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="800" fill="#0f172a">综合电竞</text>
-        <rect x="250" y="410" width="66" height="18" rx="9" fill="#7C3AED" opacity="0.9"/>
-        <text x="600" y="424" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" font-weight="800" fill="#475569">1 条</text>
-      </g>
-      <g>
-        <rect x="64" y="452" width="500" height="34" rx="10" fill="#E0F2FE" opacity="0.92"/>
-        <circle cx="84" cy="469" r="7" fill="#0EA5E9"/>
-        <text x="104" y="474" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="800" fill="#0f172a">游戏版本</text>
-        <rect x="250" y="460" width="330" height="18" rx="9" fill="#0EA5E9" opacity="0.9"/>
-        <text x="600" y="474" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" font-weight="800" fill="#475569">30 条</text>
-      </g>
-      <g>
-        <rect x="64" y="502" width="500" height="34" rx="10" fill="#DCFCE7" opacity="0.92"/>
-        <circle cx="84" cy="519" r="7" fill="#16A34A"/>
-        <text x="104" y="524" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="800" fill="#0f172a">Steam 新游</text>
-        <rect x="250" y="510" width="330" height="18" rx="9" fill="#16A34A" opacity="0.9"/>
-        <text x="600" y="524" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" font-weight="800" fill="#475569">88 条</text>
-      </g>
-  <rect x="760" y="418" width="330" height="86" rx="22" fill="#ecfeff" stroke="#ccfbf1"/>
-  <text x="790" y="454" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="900" fill="#0f766e">crawler · validator · link-check</text>
-  <text x="790" y="482" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" fill="#475569">GitHub Actions + Pages + Hub sync</text>
+
+  <rect width="1200" height="640" rx="32" fill="#F6F8FB"/>
+  <rect x="42" y="42" width="1116" height="556" rx="30" fill="#FFFFFF" stroke="#D9E2EF" filter="url(#softShadow)"/>
+
+  <rect x="70" y="70" width="1060" height="58" rx="16" fill="#0F172A"/>
+  <rect x="96" y="91" width="16" height="16" rx="8" fill="#E11D48"/>
+  <text x="126" y="108" font-family="Inter, Microsoft YaHei, sans-serif" font-size="18" font-weight="900" fill="#FFFFFF">JUST-DDL NETWORK</text>
+  <text x="958" y="108" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="800" text-anchor="end" fill="#B7F7D4">Pages + Hub sync</text>
+  <text x="1110" y="108" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="800" text-anchor="end" fill="#C7D2FE">public-data</text>
+
+  <text x="76" y="180" font-family="Inter, Microsoft YaHei, sans-serif" font-size="42" font-weight="900" fill="#0F172A">Game DDL Topic Family</text>
+  <text x="76" y="218" font-family="Inter, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#334155">电竞赛事、游戏版本与 Steam 新游倒计时</text>
+  <text x="76" y="248" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" fill="#64748B">Official-source countdowns for esports, Riot patches, and Steam releases.</text>
+
+  <g>
+    <rect x="76" y="292" width="650" height="82" rx="18" fill="#FFF1F2" stroke="#FFE4E6"/>
+    <rect x="100" y="316" width="34" height="34" rx="10" fill="#E11D48"/>
+    <path d="M111 328h12v5h5v6h-5v3h-12v-3h-5v-6h5z" fill="#FFFFFF"/>
+    <text x="154" y="323" font-family="Inter, Microsoft YaHei, sans-serif" font-size="18" font-weight="900" fill="#0F172A">Esports Events</text>
+    <text x="154" y="350" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" fill="#64748B">LoL, VALORANT, CS2, Dota 2, 王者荣耀, EWC</text>
+    <text x="688" y="329" font-family="Inter, Microsoft YaHei, sans-serif" font-size="30" font-weight="900" text-anchor="end" fill="#E11D48">16</text>
+    <text x="688" y="352" font-family="Inter, Microsoft YaHei, sans-serif" font-size="14" font-weight="800" text-anchor="end" fill="#9F1239">items</text>
+  </g>
+
+  <g>
+    <rect x="76" y="394" width="650" height="82" rx="18" fill="#EFF6FF" stroke="#DBEAFE"/>
+    <rect x="100" y="418" width="34" height="34" rx="10" fill="#0EA5E9"/>
+    <path d="M109 430h16v5h-16zM109 438h12v5h-12z" fill="#FFFFFF"/>
+    <text x="154" y="425" font-family="Inter, Microsoft YaHei, sans-serif" font-size="18" font-weight="900" fill="#0F172A">Game Versions</text>
+    <text x="154" y="452" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" fill="#64748B">League of Legends and TFT official patch schedule</text>
+    <text x="688" y="431" font-family="Inter, Microsoft YaHei, sans-serif" font-size="30" font-weight="900" text-anchor="end" fill="#0284C7">30</text>
+    <text x="688" y="454" font-family="Inter, Microsoft YaHei, sans-serif" font-size="14" font-weight="800" text-anchor="end" fill="#075985">items</text>
+  </g>
+
+  <g>
+    <rect x="76" y="496" width="650" height="82" rx="18" fill="#F0FDF4" stroke="#DCFCE7"/>
+    <rect x="100" y="520" width="34" height="34" rx="10" fill="#16A34A"/>
+    <path d="M110 536a7 7 0 1 0 14 0 7 7 0 0 0-14 0zm17-9h8v8h-8z" fill="#FFFFFF"/>
+    <text x="154" y="527" font-family="Inter, Microsoft YaHei, sans-serif" font-size="18" font-weight="900" fill="#0F172A">Steam Upcoming</text>
+    <text x="154" y="554" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" fill="#64748B">Coming Soon and Popular Upcoming releases with precise dates</text>
+    <text x="688" y="533" font-family="Inter, Microsoft YaHei, sans-serif" font-size="30" font-weight="900" text-anchor="end" fill="#16A34A">88</text>
+    <text x="688" y="556" font-family="Inter, Microsoft YaHei, sans-serif" font-size="14" font-weight="800" text-anchor="end" fill="#166534">items</text>
+  </g>
+
+  <g>
+    <rect x="770" y="166" width="326" height="112" rx="24" fill="#0F172A"/>
+    <rect x="770" y="166" width="10" height="112" rx="5" fill="#16A34A"/>
+    <text x="802" y="214" font-family="Inter, Microsoft YaHei, sans-serif" font-size="44" font-weight="900" fill="#FFFFFF">134</text>
+    <text x="802" y="247" font-family="Inter, Microsoft YaHei, sans-serif" font-size="18" font-weight="900" fill="#FFFFFF">active DDL items</text>
+
+    <rect x="770" y="302" width="150" height="112" rx="22" fill="#F8FAFC" stroke="#D9E2EF"/>
+    <text x="802" y="350" font-family="Inter, Microsoft YaHei, sans-serif" font-size="38" font-weight="900" fill="#0F172A">13</text>
+    <text x="802" y="382" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" font-weight="800" fill="#64748B">source families</text>
+
+    <rect x="946" y="302" width="150" height="112" rx="22" fill="#F8FAFC" stroke="#D9E2EF"/>
+    <text x="978" y="350" font-family="Inter, Microsoft YaHei, sans-serif" font-size="38" font-weight="900" fill="#0F172A">3</text>
+    <text x="978" y="382" font-family="Inter, Microsoft YaHei, sans-serif" font-size="15" font-weight="800" fill="#64748B">public exports</text>
+  </g>
+
+  <g>
+    <rect x="770" y="446" width="326" height="132" rx="24" fill="#F8FAFC" stroke="#D9E2EF"/>
+    <text x="802" y="482" font-family="Inter, Microsoft YaHei, sans-serif" font-size="16" font-weight="900" fill="#0F172A">Official source pipeline</text>
+    <text x="802" y="516" font-family="Inter, Microsoft YaHei, sans-serif" font-size="14" font-weight="800" fill="#E11D48">official pages</text>
+    <path d="M910 511h42" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+    <path d="M948 505l10 7-10 7" fill="none" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="970" y="516" font-family="Inter, Microsoft YaHei, sans-serif" font-size="14" font-weight="800" fill="#0284C7">crawler</text>
+    <text x="802" y="548" font-family="Inter, Microsoft YaHei, sans-serif" font-size="14" font-weight="800" fill="#16A34A">validator</text>
+    <path d="M887 543h42" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+    <path d="M925 537l10 7-10 7" fill="none" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="948" y="548" font-family="Inter, Microsoft YaHei, sans-serif" font-size="14" font-weight="800" fill="#0F766E">Hub sync</text>
+  </g>
 </svg>
